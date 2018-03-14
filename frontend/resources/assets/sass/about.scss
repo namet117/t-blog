@@ -1,0 +1,115 @@
+/*  About Me Page */
+.about-me {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+    font-weight: 100;
+    color: #000;
+    line-height: 1.35;
+  }
+
+  .glyphicon {
+    font-size: 1em;
+  }
+  h2 {
+    margin-top: 4px;
+    font-size: 1.2em;
+  }
+  h3 {
+    font-size: 1.1em;
+    span {
+      font-weight: 300;
+    }
+  }
+  hr {
+    margin-top: 0 !important;
+    margin-bottom: .4em;
+  }
+
+  padding-top: 10px;
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .side {
+    padding-top: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px #bbb;
+    box-sizing: border-box;
+  }
+  // 左侧栏
+  .left {
+    label {
+      font-weight: 100;
+    }
+    ul {
+      padding-left: 0;
+      li {
+        list-style-type:none;
+        label {
+          display: inline-block;
+          width: 35%;
+        }
+        progress {
+          background-color: #f6f6f6;
+          display: inline;
+          /*width: 195px;*/
+          height: 1em;
+        }
+
+        progress::-webkit-progress-bar {
+          background-color: #e0eaf0;
+        }
+
+        progress::-webkit-progress-value {
+          background-color: #393d62;
+        }
+
+        progress::-moz-progress-bar {
+          background-color: #e0eaf0;
+        }
+
+        progress::-moz-progress-value {
+          background-color: #708d9b;
+        }
+      }
+    }
+    .me {
+      padding-top: 5px;
+      font-weight: 100;
+      .portrait {
+        width: 150px;
+        border-radius: 75px;
+        overflow: hidden;
+        position: relative;
+        img {
+          width: inherit;
+          height: 150px;
+        }
+      }
+      .name {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  // 右侧栏
+  .right {
+    time {
+      display: block;
+      float: right;
+    }
+    mark {
+      background: rgba(232, 232, 232, 0.8);
+    }
+
+    .introduction {
+      p {
+        padding-left: 16px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+
+// Fonts
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+body {
+    padding-top: 70px;
+}
+.home-page {
+    .first-img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 110px;
+        height: 110px;
+        img {
+            width: 110px;
+            height: 110px;
+        }
+    }
+}
+
+.friend-links {
+    a {
+        display: block;
+        float: left;
+        margin: 0 20px 0 0;
+    }
+}
+
+.message {
+    .time {
+        font-size: 10px;
+        font-weight: lighter;
+    }
+}
+.tags {
+    span {
+        cursor: pointer;
+    }
+    .tag_names {
+        display: block;
+        float: left;
+        margin: 0 10px 10px 0;
+    }
+}
+
+/* Sticky footer styles */
+html {
+    position: relative;
+    min-height: 100% ;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100% ;
+    /* Set the fixed height of the footer here */
+    height: 40px;
+    background-color: #000;
+
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+
+        p {
+            margin: 10px 0;
+            color: #c1c1c1;
+
+            a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+/* Article Body*/
+.article {
+    .article-title {
+        text-decoration: none;
+    }
+    .article-body {
+        text-overflow:clip;
+        overflow:hidden;
+        font-size: 15px;
+    }
+    //praise_times & view_times & comment_times
+    .article-nums button {
+        display: block;
+        float: right;
+        margin: 0 10px 0 0;
+    }
+
+    .article-pagination {
+        text-align: center !important;
+    }
+}
+/* Common Style */
+.btn-no-border {
+    border: none !important;
+}
