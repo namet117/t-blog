@@ -18,5 +18,8 @@
         "lodash": "^4.17.4",
         "vue": "^2.5.13",
         "iview": "^2.9.2"
+    },
+    "dependencies": {
+        "github-markdown-css": "^2.10.0"
     }
 }

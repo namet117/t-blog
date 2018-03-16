@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default card">
     <div class="panel-heading">
         标签
     </div>
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default card">
     <div class="panel-heading">
         留言区
     </div>
@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default card">
     <div class="panel-heading">
         友情链接
     </div>

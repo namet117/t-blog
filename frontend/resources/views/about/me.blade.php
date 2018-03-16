@@ -1,7 +1,6 @@
 @extends('layouts.default')
 
 @section('title', 'nameT的简介')
-<link rel="stylesheet" href="{{ mix('css/about.css') }}">
 @section('content')
 <div class="container">
     <div class="row about-me">

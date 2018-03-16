@@ -3,7 +3,7 @@
 @forelse ($articles as $article)
     <div class="row article">
         <div class="col-xs-12 col-md-12 col-lg-12">
-            <div class="panel panel-info">
+            <div class="panel panel-info card">
                 <div class="panel-body">
                     <h3>
                         <a href="{{ route('article.show_detail', [$article->id, $article->slug]) }}" class="article-title article-link">
@@ -14,7 +14,7 @@
                         </a>
                     </h3>
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 tags">
                             @foreach ($article->tags as $tag)
                             <a type="button" href="{{ route('tag.articles', [$tag]) }}" name="button" class="btn btn-default btn-xs btn-no-border" aria-label="{{ $tag }}">
                                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> {{ $tag }}

@@ -8,9 +8,25 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+@import "about";
 
 body {
     padding-top: 70px;
+
+
+    /* Common Style */
+    // 无边框按钮
+    .btn-no-border {
+        border: none !important;
+    }
+    // 卡片式展示
+    .card {
+        padding-top: 10px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 5px 20px #bbb;
+        box-sizing: border-box;
+    }
 }
 .home-page {
     .first-img {
@@ -83,10 +99,16 @@ body {
     }
 }
 
-/* Article Body*/
+/* Article List*/
 .article {
+    h3 {
+        margin-top: 0;
+    }
     .article-title {
         text-decoration: none;
+    }
+    .tags {
+        margin-bottom: 5px;
     }
     .article-body {
         text-overflow:clip;
@@ -104,7 +126,14 @@ body {
         text-align: center !important;
     }
 }
-/* Common Style */
-.btn-no-border {
-    border: none !important;
+
+/* Article Detail */
+.article-detail {
+    .right {
+        position: absolute;
+    }
+
+    .col-md-offset-1 {
+        margin-left: 4.33% !important;
+    }
 }
