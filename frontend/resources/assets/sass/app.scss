@@ -27,6 +27,19 @@ body {
         box-shadow: 0 5px 20px #bbb;
         box-sizing: border-box;
     }
+    // 返回顶部
+    #back-to-top {
+        display: none;
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        right: 35px;
+        bottom: 45px;
+        i {
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
 }
 .home-page {
     .first-img {
@@ -135,5 +148,9 @@ body {
 
     .col-md-offset-1 {
         margin-left: 4.33% !important;
+    }
+
+    .prev-next-null {
+        color: grey;
     }
 }
