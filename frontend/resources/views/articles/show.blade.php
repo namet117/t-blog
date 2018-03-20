@@ -9,18 +9,13 @@
 @section('content')
 <div class="container">
     <div class="row article-detail">
-        <div class="col-xs-12 col-sm-12 col-md-12 markdown-body left card">
+        <div class="col-xs-12 markdown-body left card">
             <div class="prev-next">
                 @if ($prev)
                 <a class="prev" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
                     <i class="glyphicon glyphicon-chevron-left"></i>
                     {{ $prev->title }}
                 </a>
-                @else
-                <div class="prev-next-null">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
-                    没有了.
-                </div>
                 @endif
 
                 @if ($next)
@@ -28,11 +23,6 @@
                     {{ $next->title }}
                     <i class="glyphicon glyphicon-chevron-right"></i>
                 </a>
-                @else
-                <div class="prev-next-null pull-right" disabled href="javascript:void(0);">
-                    没有了.
-                    <i class="glyphicon glyphicon-chevron-right"></i>
-                </div>
                 @endif
             </div>
             <h2>{{ $article->title }}</h2>
@@ -45,11 +35,6 @@
                     <i class="glyphicon glyphicon-chevron-left"></i>
                     {{ $prev->title }}
                 </a>
-                @else
-                <div class="prev-next-null">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
-                    没有了.
-                </div>
                 @endif
 
                 @if ($next)
@@ -57,31 +42,15 @@
                     {{ $next->title }}
                     <i class="glyphicon glyphicon-chevron-right"></i>
                 </a>
-                @else
-                <div class="prev-next-null pull-right" disabled href="javascript:void(0);">
-                    没有了.
-                    <i class="glyphicon glyphicon-chevron-right"></i>
-                </div>
                 @endif
             </div>
         </div>
-        <!-- <div class="col-md-offset-1 hidden-xs hidden-sm col-md-3 card">
-            <ul>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-                <li>dsa</li>
-            </ul>
-        </div> -->
+    </div>
+    <!-- 文章评论 -->
+    <div class="row article-comment">
+        <div class="col-xs-12 card">
+            <h3>文章评论({{ $article->comment_times }})</h3>
+        </div>
     </div>
 </div>
 @endsection

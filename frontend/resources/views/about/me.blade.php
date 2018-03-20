@@ -80,13 +80,13 @@
                     </li>
                     <li>
                         <h3>
-                            <span>深圳市有棵树科技股份有限公司－PHP开发工程师</span>
+                            <span>深圳市 * * * 科技股份有限公司－PHP开发工程师</span>
                             <time>2015.10-2017.4</time>
                         </h3>
                         <ul class="info-content">
-                            <li>深度参与开发 <mark>海豚供应链商城</mark>第一版和第二版。</li>
-                            <li>参与开发和维护 <mark>海豚供应链API系统</mark></li>
-                            <li>参与开发和维护 <mark>海豚供应链ERP系统</mark></li>
+                            <li>深度参与开发 <mark>商城</mark>。</li>
+                            {{--<li>参与开发和维护 <mark>海豚供应链API系统</mark></li>--}}
+                            {{--<li>参与开发和维护 <mark>海豚供应链ERP系统</mark></li>--}}
                             {{--<li>主要参与公司产品「XXXX」的前端开发工作，实现接入微博、微信、QQ等<mark>第三方账号登录</mark>等功能。项目采用技术栈WordPress+NAMP。</li>--}}
                             {{--<li>活动页面的开发（七夕活动、抽奖活动以及承接外包页面）。</li>--}}
                             {{--<li>论坛<mark>图片增量备份</mark>（CentOS+vsftpd+crontab）<a href="#" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。</li>--}}
