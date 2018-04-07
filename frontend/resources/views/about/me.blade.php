@@ -21,10 +21,10 @@
                         <label>个人信息</label>
                         <span>nameT / 男 / 24岁</span>
                     </li>
-                    <li>
+                    {{-- <li>
                         <label>英语水平</label>
                         <span>CET-4</span>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <div class="contact">
@@ -41,11 +41,10 @@
                 <hr/>
                 <ul>
                     <li><label>HTML/CSS</label><progress value="60" max="100"></progress></li>
-                    <li><label>JavaScript</label><progress value="70" max="100"></progress></li>
-                    <li><label>PHP</label><progress value="85" max="100"></progress></li>
-                    <li><label>Redis</label><progress value="90" max="100"></progress></li>
+                    <li><label>JavaScript</label><progress value="65" max="100"></progress></li>
+                    <li><label>PHP</label><progress value="80" max="100"></progress></li>
+                    <li><label>Redis</label><progress value="70" max="100"></progress></li>
                     <li><label>MySQL</label><progress value="60" max="100"></progress></li>
-                    <li><label>MonogDB</label><progress value="40" max="100"></progress></li>
                     <li><label>Linux</label><progress value="30" max="100"></progress></li>
                     <li><label>Docker</label><progress value="30" max="100"></progress></li>
                 </ul>
@@ -57,7 +56,7 @@
                 <hr/>
                 <ul>
                     <li>
-                        <h3><span>天津科技大学 - 应用化学（本科）</span><time>2011.9-2015.7</time></h3>
+                        <h3><span>天津科技大学{{--  - 应用化学（本科） --}}</span><time>2011.9-2015.6</time></h3>
                         <p></p>
                     </li>
                 </ul>
@@ -68,14 +67,11 @@
                 <ul>
                     <li>
                         <h3>
-                            <span>深圳市 * * * 科技投资有限公司－PHP开发工程师</span>
-                            <time>2017.7-至今</time>
+                            <span>深圳市 * * * * * * －PHP开发工程师</span>
+                            <time>2017.7-2018.4</time>
                         </h3>
                         <ul class="info-content">
-                            <li>开发积分系统。</li>
-                            {{--<li>主要参与公司产品「XXXX」的前端开发工作，实现接入微博、微信、QQ等<mark>第三方账号登录</mark>等功能。项目采用技术栈WordPress+NAMP。</li>--}}
-                            {{--<li>活动页面的开发（七夕活动、抽奖活动以及承接外包页面）。</li>--}}
-                            {{--<li>论坛<mark>图片增量备份</mark>（CentOS+vsftpd+crontab）<a href="#" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。</li>--}}
+                            <li>认真的搬砖</li>
                         </ul>
                     </li>
                     <li>
@@ -84,12 +80,7 @@
                             <time>2015.10-2017.4</time>
                         </h3>
                         <ul class="info-content">
-                            <li>深度参与开发 <mark>商城</mark>。</li>
-                            {{--<li>参与开发和维护 <mark>海豚供应链API系统</mark></li>--}}
-                            {{--<li>参与开发和维护 <mark>海豚供应链ERP系统</mark></li>--}}
-                            {{--<li>主要参与公司产品「XXXX」的前端开发工作，实现接入微博、微信、QQ等<mark>第三方账号登录</mark>等功能。项目采用技术栈WordPress+NAMP。</li>--}}
-                            {{--<li>活动页面的开发（七夕活动、抽奖活动以及承接外包页面）。</li>--}}
-                            {{--<li>论坛<mark>图片增量备份</mark>（CentOS+vsftpd+crontab）<a href="#" target="_blank"><i class="fa fa-link" aria-hidden="true"></i>博客文章</a>。</li>--}}
+                            <li>做<mark>商城</mark></li>
                         </ul>
                     </li>
                 </ul>
@@ -113,11 +104,7 @@
                                 <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
                                 个人
                                 <br>
-                                {{--<i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>--}}
-                                {{--[贡献]完成从<mark></mark>--}}
-                                {{--<br>--}}
-                                {{--<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>--}}
-                                {{--[效果]作品最终取得第三届共享杯国家级竞赛“一等奖” （2/2000）</li>--}}
+                            </li>
                         </ul>
                     </li>
                 </ul>

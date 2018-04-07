@@ -29,4 +29,9 @@ class HomeController extends Controller
         $page = $data['pagination'];
         return view('home.index', compact('tags', 'messages', 'articles', 'page'));
     }
+
+    public function about()
+    {
+        return view('about.me');
+    }
 }

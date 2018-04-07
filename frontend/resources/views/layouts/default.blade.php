@@ -15,10 +15,13 @@
         @include('layouts._header')
         <!-- 提示信息 -->
         @include('share._msg')
+        <!-- 错误信息 -->
+        @include('share._errors')
         <!-- 正文 -->
         @yield('content')
         <!-- 页脚 -->
         @include('layouts._footer')
     </body>
     <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+    @yield('footer_script', '')
 </html>

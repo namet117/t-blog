@@ -6,17 +6,17 @@ import store from '@/store';
 import iView,{Notice} from 'iview';
 
 const ajaxUrl = env === 'development'
-    ? 'http://www.namet.xyz/admin/v1'
+    ? 'http://blog.my.test/admin/v1'
     : 'https://www.namet.xyz/admin/v1';
 
 let http = axios.create({
     baseURL: ajaxUrl,
     timeout: 30000,
-    headers:{
-        'Content-Type':'application/x-www-form-urlencoded'
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
     },
     transformRequest: [function (data) {
-        data = data ? data : {};
+        data = data || {};
         data['api_token'] = localStorage.getItem('api_token');
         data = Qs.stringify(data);
         return data;
@@ -25,7 +25,7 @@ let http = axios.create({
     transformResponse: [function (data) {
         try {
             data = JSON.parse(data);
-        } catch(err) {}
+        } catch (err) {}
 
         return data;
     }],
@@ -67,7 +67,7 @@ http.interceptors.response.use(
             switch (error.response.status) {
                 case 401:
                     store.commit('logout');
-                    //todo 尚未解决
+                    // todo 尚未解决
                 //     router.replace({
                 //         path: '/login',
                 //         query: {}
@@ -94,7 +94,7 @@ http.interceptors.response.use(
                 //     break;
             }
         }
-        return Promise.reject(error)
+        return Promise.reject(error);
     }
 );
 

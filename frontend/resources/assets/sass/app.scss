@@ -40,6 +40,9 @@ body {
             cursor: pointer;
         }
     }
+    .red-asterisk {
+        color: red;
+    }
 }
 .home-page {
     .first-img {
@@ -157,6 +160,53 @@ body {
 .article-comment {
     margin-top: 20px;
     h3 {
-        margin-top: 0;
+        margin: 0;
+    }
+    .panel-heading {
+        border-bottom: 0px;
+    }
+    .panel-body {
+        padding-top: 0px;
+        .avatar {
+            padding-right: 0px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+        .detail {
+            margin-left: 60px;
+            .rank-time {
+                font-size: 10px;
+                color: grey;
+                span {
+                    margin-right: 5px;
+                }
+            }
+            .username {
+                font-weight: bold;
+            }
+            .reply-to {
+                color: blue;
+                text-decoration: underline;
+                float: left;
+            }
+        }
+    }
+    .add {
+        margin-bottom: 10px;
+
+        textarea {
+            overflow: hidden;
+            word-wrap: break-word;
+            resize: horizontal;
+            height: 164px;
+        }
+        #content-reply-to {
+            display: none;
+        }
+        #add-comment-error {
+            color: red;
+            display: none;
+        }
     }
 }

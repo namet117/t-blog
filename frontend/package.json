@@ -20,6 +20,7 @@
         "iview": "^2.9.2"
     },
     "dependencies": {
+        "font-awesome": "^4.7.0",
         "github-markdown-css": "^2.10.0"
     }
 }

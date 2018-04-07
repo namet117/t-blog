@@ -1,6 +1,5 @@
 /public/storage
 /storage/*.key
-/.idea
 /.vagrant
 Homestead.json
 Homestead.yaml

@@ -20,7 +20,8 @@ class CreateMessagesTable extends Migration
             $table->text('content')->comment('内容');
             $table->ipAddress('ip')->comment('IP地址');
             $table->string('ip_location')->comment('IP地理位置')->nullable();
-            $table->tinyInteger('is_new', 1)->default(1)->comment('是否为新消息');
+            //默认值都会被当作字符串，还需要适配MySQL5.7的数据类型检查
+            // $table->tinyInteger('is_new', 1)->nullable()->comment('是否为新消息');
             $table->timestamps();
             $table->softDeletes();
         });

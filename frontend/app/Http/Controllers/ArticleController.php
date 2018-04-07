@@ -13,6 +13,9 @@ class ArticleController extends Controller
         $next = $article::select($fields)->where('id', '>', $article->id)->limit(1)->orderBy('id', 'asc')->first();
         $prev = $article::select($fields)->where('id', '<', $article->id)->limit(1)->orderBy('id', 'desc')->first();
 
-        return view('articles.show', compact('article', 'prev', 'next'));
+        $comments = $article->comments;
+        $reply_names = $comments->pluck('username', 'id')->toArray();
+
+        return view('articles.show', compact('article', 'prev', 'next', 'comments', 'reply_names'));
     }
 }

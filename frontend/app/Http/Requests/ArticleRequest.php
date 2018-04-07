@@ -23,7 +23,6 @@ class ArticleRequest extends FormRequest
      */
     public function rules()
     {
-
         switch($this->method())
         {
             // CREATE

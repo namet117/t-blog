@@ -62,7 +62,7 @@
         </div>
     </div>
 @empty
-    <p class="bg-warning">此栏目下暂时还没有文章哟...</p>
+    <p class="card" style="text-align: center;color: red">此栏目下暂时还没有文章哟...</p>
 @endforelse
 <div class="row" style="text-align:center">
     {!! $page->links() !!}

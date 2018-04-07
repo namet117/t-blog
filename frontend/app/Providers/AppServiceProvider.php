@@ -16,16 +16,17 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         \App\Article::observe(\App\Observers\ArticleObserver::class);
+        \App\Comment::observe(\App\Observers\CommentObserver::class);
 
         \Carbon\Carbon::setLocale('zh');
 
-        DB::listen(function ($event) {
-            $sql = str_replace("?", "'%s'", $event->sql);
-
-            $log = vsprintf($sql, $event->bindings);
-
-            Log::info($log);
-        });
+        // DB::listen(function ($event) {
+        //     $sql = str_replace("?", "'%s'", $event->sql);
+        //
+        //     $log = vsprintf($sql, $event->bindings);
+        //
+        //     Log::info($log);
+        // });
     }
 
     /**
