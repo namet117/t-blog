@@ -9,7 +9,6 @@
                         <a href="{{ route('article.show_detail', [$article->id, $article->slug]) }}" class="article-title article-link">
                             {{ $article->title }}
                             @if ($article->is_top)
-                            <span class="glyphicon glyphicon-arrow-up"></span>
                             @endif
                         </a>
                     </h3>

@@ -38,6 +38,7 @@ class CommentController extends Controller
         $data = $request->only(['username', 'site', 'email', 'original_md', 'reply_to', 'article_id']);
         $data['notification'] = $request->has('notify') ? 0 : 1;
         $data['reply_to'] = $reply_to_id;
+        $data['ip'] = $request->getClientIp();
 
         $comment->fill($data);
         $comment->save();
