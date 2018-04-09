@@ -84,7 +84,6 @@ export default {
                         username: _this.form.userName,
                         password: _this.form.password,
                     }).then(response => {
-                        _this.spin = false;
                         let user = response.data;
                         Cookies.set('user', this.form.userName);
                         Cookies.set('access', 1);

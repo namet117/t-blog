@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<div class="panel panel-default card">
+{{-- <div class="panel panel-default card">
     <div class="panel-heading">
         留言区
     </div>
@@ -36,7 +36,7 @@
     <div class="panel-footer">
         <a href="javascript:void(0);">查看更多</a>
     </div>
-</div>
+</div> --}}
 
 <div class="panel panel-default card">
     <div class="panel-heading">

@@ -16,9 +16,9 @@
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                     </a>
                 </li>
-                <li class="@if(strpos(url()->current(), 'PHP')) active @endif">
+                {{--<li class="@if(strpos(url()->current(), 'PHP')) active @endif">
                     <a href="{{ route('tag.articles', ['PHP']) }}">PHP</a>
-                </li>
+                </li>--}}
                 <li class="@if(strpos(url()->current(), 'about')) active @endif">
                     <a href="{{ route('about') }}" >About</a>
                 </li>
