@@ -19,8 +19,8 @@ class CommentController extends Controller
         ], [
             'username.max' => '最多只允许20个字符',
             'original_md.required' => '评论内容不可为空',
-            'article_id.required' => '页面错误，请在刷新后重试2！',
-            'article_id.exists' => '页面错误，请在刷新后重试3！',
+            'article_id.required' => '请不要改动页面内容！',
+            'article_id.exists' => '大哥，你想给哪篇文章评论呢？！',
         ]);
         $reply_to_id = intval($request->input('reply_to', 0));
         $validator->after(function($validator) use($reply_to_id, $request) {
@@ -28,7 +28,7 @@ class CommentController extends Controller
                 $reply_to_id &&
                 (Comment::where(['article_id' => $request->article_id, 'id' => $reply_to_id])->count() == 0)
             ) {
-                $validator->errors()->add('reply_to', '页面错误，请在刷新后重试！4');
+                $validator->errors()->add('reply_to', '亲，找不到你要回复的评论！');
             }
         });
         if ($validator->fails()) {

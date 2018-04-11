@@ -7,22 +7,23 @@
 <link href="https://cdn.bootcss.com/github-markdown-css/2.10.0/github-markdown.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://cdn.bootcss.com/simplemde/1.7.1/simplemde.min.css" rel="stylesheet">
+<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
     <div class="row article-detail">
         <div class="col-xs-12 markdown-body left card">
             <div class="prev-next">
                 @if ($prev)
-                <a class="prev" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
+                <a class="prev" title="上一篇" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
+                    <i class="fa fa-angle-double-left"></i>
                     {{ $prev->title }}
                 </a>
                 @endif
 
                 @if ($next)
-                <a class="pull-right" href="{{ route('article.show_detail', [$next->id, $next->slug]) }}">
+                <a class="pull-right" title="下一篇" href="{{ route('article.show_detail', [$next->id, $next->slug]) }}">
                     {{ $next->title }}
-                    <i class="glyphicon glyphicon-chevron-right"></i>
+                    <i class="fa fa-angle-double-right"></i>
                 </a>
                 @endif
             </div>
@@ -32,16 +33,16 @@
             </div>
             <div class="prev-next">
                 @if ($prev)
-                <a class="prev" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
-                    <i class="glyphicon glyphicon-chevron-left"></i>
+                <a class="prev" title="上一篇" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
+                    <i class="fa fa-angle-double-left"></i>
                     {{ $prev->title }}
                 </a>
                 @endif
 
                 @if ($next)
-                <a class="pull-right" href="{{ route('article.show_detail', [$next->id, $next->slug]) }}">
+                <a class="pull-right" title="下一篇" href="{{ route('article.show_detail', [$next->id, $next->slug]) }}">
                     {{ $next->title }}
-                    <i class="glyphicon glyphicon-chevron-right"></i>
+                    <i class="fa fa-angle-double-right"></i>
                 </a>
                 @endif
             </div>
@@ -55,7 +56,7 @@
                     <h3><i class="fa fa-comments"></i> 文章评论 ({{ $article->comment_times }})</h3>
                 </div>
                 <div class="panel-body">
-                    @if ($comments)
+                    @if (count($comments))
                     <ul class="list-group row">
                         @foreach ($comments as $comment)
                         <li class="list-group-item media" style="margin-top:0px;" id="comment-{{ $comment->id }}" data-id="{{ $comment->id }}" >
@@ -90,7 +91,7 @@
                         @endforeach
                     </ul>
                     @else
-                    <div class="empty">评论一下，沙发就是你的了～～</div>
+                    <div class="empty">评论一下，沙发🛋️就是你的了～～</div>
                     @endif
                 </div>
             </div>
@@ -138,12 +139,14 @@
 
 @section('footer_script')
 <script src="https://cdn.bootcss.com/simplemde/1.7.1/simplemde.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        var simplemde = new SimpleMDE({
+        new SimpleMDE({
             element: $('#mde-area')[0],
             autoDownloadFontAwesome: false,
         });
     });
+    hljs.initHighlightingOnLoad();
 </script>
 @endsection

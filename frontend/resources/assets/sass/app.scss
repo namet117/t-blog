@@ -145,17 +145,20 @@ body {
 
 /* Article Detail */
 .article-detail {
-    .right {
-        position: absolute;
-    }
-
-    .col-md-offset-1 {
-        margin-left: 4.33% !important;
-    }
-
-    .prev-next-null {
-        color: grey;
-    }
+    // .right {
+    //     position: absolute;
+    // }
+    //
+    // .col-md-offset-1 {
+    //     margin-left: 4.33% !important;
+    // }
+    // pre {
+    //     background: rgba(54, 56, 58, 0.98);
+    //     color: #f8f8f2;
+    //     text-shadow: none;
+    //     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    //     border-radius: 2px;
+    // }
 }
 .article-comment {
     margin-top: 20px;
