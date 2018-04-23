@@ -8,6 +8,16 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return "<script>alert('正在开发中...');</script>";
+        return view('auth/login');
+    }
+
+    public function login()
+    {
+
+    }
+
+    public function logout()
+    {
+
     }
 }

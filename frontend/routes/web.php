@@ -16,4 +16,6 @@ Route::get('/about', 'HomeController@about')->name('about');
 Route::resource('comment', 'CommentController', ['only' => ['store'],]);
 
 // 账号相关
-Route::resource('login', 'AuthController');
+Route::get('login', 'AuthController@index')->name('login');
+Route::post('login', 'AuthController@login')->name('doLogin');
+Route::post('logout', 'AuthController@logout')->name('logout');
