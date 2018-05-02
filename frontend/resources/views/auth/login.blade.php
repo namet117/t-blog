@@ -5,14 +5,14 @@
         <div class="panel panel-default">
             <div class="panel-heading">可使用以下方式登陆</div>
             <div class="panel-body" id="user-login">
-                <img src="http://file.namet.xyz/material/third-party.png" alt="">
+                <a id="qq" href="#" class="qq" target="_blank"></a>
             </div>
         </div>
     </div>
 </div>
 <style media="screen">
-/* #qq {
-    background: url('http://file.namet.xyz/material/third-party.png');
-} */
+#qq {
+    background: url('./images/material/third-party.png') no-repeat 50px;
+}
 </style>
 @endsection
