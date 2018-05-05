@@ -24,7 +24,7 @@ $(window).scroll(function () {
 $backTop.click(function(){
     $("html,body").animate({scrollTop:0}, 500);
 });
-
+// 评论回复
 if ($('.add-reply').length) {
     $('.add-reply').on('click', function (event) {
         event.preventDefault();
