@@ -1,10 +1,33 @@
 <?php
 
 return [
-    // 微信
-    'wechat' => [],
-    // QQ
-    'wechat' => [],
+    'wechat' => [
+        'appid' => 'wx74340ea7f92adc11',
+        'redirect_uri' => route('oauth.login', ['name' => 'wechat']),
+        'secret' => '98ee280ac8abd65c2174fc6c4f057912',
+    ],
     // 新浪微博
-    'wechat' => [],
+    'weibo' => [
+        'appid' => '3798863111',
+        'redirect_uri' => route('oauth.login', ['name' => 'weibo']),
+        'secret' => 'c3259b72fba9f5fe11d13fc4cb5e4741',
+        'scope' => 'email',
+    ],
+    'qq' => [
+        'appid' => 'dsadasdas',
+        'redirect_uri' => route('oauth.login', ['name' => 'qq']),
+        'secret' => 'c3259b72fba9f5fe11d13fc4cb5e4741',
+        'scope' => 'qq',
+    ],
+    'baidu' => [
+        'appid' => 'Hefjzh4gjLNCjpjqbrySTwNx',
+        'redirect_uri' => route('oauth.login', ['name' => 'baidu']),
+        'secret' => 'AqiVPBzGGsqi1NqlVsrfmDmD8WmIW93g',
+    ],
+    'github' => [
+        'appid' => '238a1616fb979ea5d7e1',
+        'redirect_uri' => route('oauth.login', ['name' => 'github']),
+        'secret' => 'c65a48f6bfa15afbd3166c57f4494096cc5120cc',
+        'scope' => 'user:email',
+    ],
 ];

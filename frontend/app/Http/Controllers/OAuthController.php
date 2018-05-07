@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class OAuthController extends Controller
 {
-    public function oauth($name)
+    public function redirect($name)
     {
-        
+        dd(config('wechat'));
+        exit;
     }
 }

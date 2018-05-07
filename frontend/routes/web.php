@@ -17,5 +17,5 @@ Route::resource('comment', 'CommentController', ['only' => ['store'],]);
 
 // 账号相关
 Route::get('login', 'AuthController@index')->name('login');
-Route::post('login', 'AuthController@login')->name('doLogin');
-Route::post('logout', 'AuthController@logout')->name('logout');
+Route::get('/oauth/redirect/{name}', 'OAuthController@redirect')->name('oauth.redirect');
+Route::get('/oauth/{name}', 'OAuthController@login')->name('oauth.login');

@@ -8,16 +8,7 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('auth/login');
-    }
-
-    public function login()
-    {
-
-    }
-
-    public function logout()
-    {
-
+        $names = ['wechat', 'weibo', 'github', 'baidu', 'qq'];
+        return view('auth/login', compact('name'));
     }
 }
