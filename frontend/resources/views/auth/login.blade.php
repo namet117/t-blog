@@ -6,7 +6,7 @@
             <div class="panel-heading">可使用以下方式登陆</div>
             <div class="panel-body" id="user-login">
                 @foreach($names as $name)
-                {{$name}}
+                <a class="btn btn-default" href="{{ route('oauth.redirect', ['name' => $name]) }}" >{{ $name  }}</a>
                 @endforeach
             </div>
         </div>

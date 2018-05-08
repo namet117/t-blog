@@ -7,9 +7,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class Article extends Model
 {
-    protected $fillable = [
-        'title', 'abstract', 'tag_ids', 'first_img', 'view_times', 'praise_times', 'comment_times', 'content',
-        'created_at', 'slug', 'is_top', 'original_md', 'keywords'
+    protected $guarded = [
+        'id',
     ];
 
     /**

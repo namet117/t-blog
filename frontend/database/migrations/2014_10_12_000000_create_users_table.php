@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 100)->comment('邮箱')->unique();
             $table->string('telephone', 20)->comment('手机号')->unique();
             $table->string('avatar', 100)->comment('头像')->nullable();
-            $table->string('password')->comment('密码');
+            $table->string('password')->comment('密码')->nullable();
             $table->rememberToken();
             $table->string('api_token')->comment('API TOKEN')->nullable();
             $table->tinyInteger('is_admin')->comment('是否管理员')->default(0);
