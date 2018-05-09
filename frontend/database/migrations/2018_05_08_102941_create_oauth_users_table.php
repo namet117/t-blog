@@ -16,9 +16,9 @@ class CreateOauthUsersTable extends Migration
         Schema::create('oauth_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->comment('用户id');
-            $table->string('name', 20)->comment('认证服务器名称');
+            $table->string('oauth_name', 20)->comment('认证服务器名称');
             $table->string('uid', 50)->comment('唯一id')->unique();
-            $table->string('nickname', 50)->comment('昵称');
+            $table->string('uname', 50)->comment('昵称');
             $table->string('avatar', 200)->comment('头像url');
             $table->string('access_token', 100)->comment('Access_token');
             $table->integer('expire_time')->comment('access_token过期时间');
