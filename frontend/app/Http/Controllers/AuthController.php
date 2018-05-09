@@ -26,5 +26,7 @@ class AuthController extends Controller
         // TODO 验证是否有非法请求
         $config = config("oauth2.{$name}");
         $user_info = (new OAuth($name, $config))->getUserInfo();
+
+        dd($user_info);exit;
     }
 }
