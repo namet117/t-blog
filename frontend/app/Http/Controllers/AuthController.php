@@ -27,6 +27,10 @@ class AuthController extends Controller
         $config = config("oauth2.{$name}");
         $user_info = (new OAuth($name, $config))->getUserInfo();
 
-        dd($user_info);exit;
+        $uid = $user_info['uid'];
+        $user = OauthUser::find($uid)
+        if ($user) {
+
+        }
     }
 }

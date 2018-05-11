@@ -23,7 +23,7 @@ class CreateOauthUsersTable extends Migration
             $table->string('access_token', 100)->comment('Access_token');
             $table->integer('expire_time')->comment('access_token过期时间');
             $table->string('refresh_token', 100)->comment('刷新token')->nullable();
-            $table->json('extends')->comment('扩展信息json化')->nullable();
+            $table->text('extends')->comment('扩展信息json化')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
