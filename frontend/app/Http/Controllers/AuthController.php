@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\OauthUser;
 use Illuminate\Http\Request;
 use Namet\Socialite\OAuth;
 
@@ -25,12 +26,10 @@ class AuthController extends Controller
     {
         // TODO 验证是否有非法请求
         $config = config("oauth2.{$name}");
-        $user_info = (new OAuth($name, $config))->getUserInfo();
+//        $oauth_info = (new OAuth($name, $config))->getUserInfo();
+//
+//        $user_id = OauthUser::where(['uid' => $oauth_info['uid'];, 'oauth_name' => $name])->first();
+        $user = OauthUser::where(['uid' => 'dsd', 'oauth_name' => 'dsads'])->first();
 
-        $uid = $user_info['uid'];
-        $user = OauthUser::find($uid)
-        if ($user) {
-
-        }
     }
 }

@@ -20,13 +20,13 @@ class AppServiceProvider extends ServiceProvider
 
         \Carbon\Carbon::setLocale('zh');
 
-        // DB::listen(function ($event) {
-        //     $sql = str_replace("?", "'%s'", $event->sql);
-        //
-        //     $log = vsprintf($sql, $event->bindings);
-        //
-        //     Log::info($log);
-        // });
+         DB::listen(function ($event) {
+             $sql = str_replace("?", "'%s'", $event->sql);
+
+             $log = vsprintf($sql, $event->bindings);
+
+             Log::info($log);
+         });
     }
 
     /**
