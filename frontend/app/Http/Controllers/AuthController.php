@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\OauthUser;
 use Illuminate\Http\Request;
 use Namet\Socialite\OAuth;
+use App\Services\UserService;
 
 class AuthController extends Controller
 {
@@ -26,10 +27,12 @@ class AuthController extends Controller
     {
         // TODO 验证是否有非法请求
         $config = config("oauth2.{$name}");
-//        $oauth_info = (new OAuth($name, $config))->getUserInfo();
-//
-//        $user_id = OauthUser::where(['uid' => $oauth_info['uid'];, 'oauth_name' => $name])->first();
-        $user = OauthUser::where(['uid' => 'dsd', 'oauth_name' => 'dsads'])->first();
+        $oauth = new OAuth($name, $config);
+        $oauth_info = $oauth->getUserInfo();
 
+        $service = service('user');
+        if (!$service->loginByOauth2($oauth_info['uid'], $name)) {
+            $service->createUserByOauth2($oauth->infos());
+        }
     }
 }

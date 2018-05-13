@@ -11,7 +11,7 @@ namespace App\Services;
 
 abstract class BaseService
 {
-    protected static $_instance = null;
+    private static $_instance = null;
 
     private static function _instance()
     {
@@ -23,11 +23,6 @@ abstract class BaseService
     }
 
     public static function __callStatic($name, $arguments)
-    {
-        return call_user_func_array([self::_instance(), $name], $arguments);
-    }
-
-    public function __call($name, $arguments)
     {
         return call_user_func_array([self::_instance(), $name], $arguments);
     }
