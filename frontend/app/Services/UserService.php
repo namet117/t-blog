@@ -8,39 +8,57 @@
 
 namespace App\Services;
 
+use App\OauthUser;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class UserService extends BaseService
 {
-    public function loginByOauth2($uid, $oauth_name)
+    public function loginByOauth2($infos)
     {
-        $oauth_info = OauthUser::where(compact('uid', 'oauth_name'))->first();
+        $oauth_info = OauthUser::where(['uid' => $infos['uid'], 'oauth_name' => $infos['driver'],])->first();
 
         if (!$oauth_info) {
-            return false;
+            $user_id = $this->createUserByOauth2($infos);
+        } else {
+            $user_id = $oauth_info['user_id'];
         }
 
-        return $this->loginByUserId($oauth_info['user_id']);
+        return $this->loginByUserId($user_id);
     }
 
     public function createUserByOauth2($infos)
     {
-        $user = User::create([
-            'username' => $infos['uname'],
-            'avatar' => $infos['avatar'],
-            'remember_token' => bcrypt($infos['uname'] . '#' . time()),
-            'api_token' => mt_rand(1000000, 9999999),
-        ]);
+        $user_id = 0;
+        DB::transaction(function () use($infos, &$user_id) {
+            $user = User::create([
+                'username' => $infos['uname'],
+                'avatar' => $infos['avatar'],
+                'remember_token' => bcrypt($infos['uname'] . '#' . time()),
+                'api_token' => mt_rand(1000000, 9999999),
+            ]);
 
-        $oauth_info = OauthUser::create([
-            'user_id' => $user->id,
-            'oauth_name' => $infos['oauth_name'],
-            'uid' => $infos['uid'],
-            'uname' => $infos['uname'],
-            'avatar' => $infos['avatar'],
-            'access_token' => $infos['access_token'],
-            'expire_time' => $infos['expire_time'],
-            'refresh_token' => $infos['refresh_token'] ?? '',
-            'extends' => json_encode($infos),
-        ]);
-        
+            OauthUser::create([
+                'user_id' => $user->id,
+                'oauth_name' => $infos['driver'],
+                'uid' => $infos['uid'],
+                'uname' => $infos['uname'],
+                'avatar' => $infos['avatar'],
+                'access_token' => $infos['access_token'] ?? '',
+                'expire_time' => $infos['expire_time'] ?? 0,
+                'refresh_token' => $infos['refresh_token'] ?? '',
+                'extends' => json_encode($infos),
+            ]);
+
+            $user_id = $user->id;
+        });
+
+        return $user_id;
+    }
+
+    public function loginByUserId($user_id)
+    {
+        Auth::loginUsingId($user_id, true);
     }
 }
