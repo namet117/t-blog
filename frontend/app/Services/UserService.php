@@ -45,10 +45,10 @@ class UserService extends BaseService
                 'uid' => $infos['uid'],
                 'uname' => $infos['uname'],
                 'avatar' => $infos['avatar'],
-                'access_token' => $infos['access_token'] ?? '',
-                'expire_time' => $infos['expire_time'] ?? 0,
-                'refresh_token' => $infos['refresh_token'] ?? '',
-                'extends' => json_encode($infos),
+                'access_token' => $infos['access_token'] ?: '',
+                'expire_time' => $infos['expire_time'] ?: 0,
+                'refresh_token' => $infos['refresh_token'] ?: '',
+                'extends' => '',
             ]);
 
             $user_id = $user->id;

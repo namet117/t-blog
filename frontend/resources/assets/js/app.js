@@ -28,9 +28,10 @@ $backTop.click(function(){
 if ($('.add-reply').length) {
     $('.add-reply').on('click', function (event) {
         event.preventDefault();
-        let reply_to_id = $(this).closest('li').data('id');
+        let reply_to_rank = $(this).closest('li').data('rank');
+        let reply_to_id= $(this).closest('li').data('id');
         $('#reply-to-id').val(reply_to_id);
-        $('#reply-to-id-show').html(reply_to_id);
+        $('#reply-to-id-show').html(reply_to_rank);
         let $closest_detail = $(this).closest('.detail');
         $('#reply-to-username').html($closest_detail.find('.username').eq(0).text());
         $('#reply-to-content').html($closest_detail.find('.content-detail').eq(0).html());

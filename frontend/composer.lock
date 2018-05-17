@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a474eb5d226949a6d401ddf118f4ab04",
+    "content-hash": "0de2b3cf1fb2d889572b99335a9efd10",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -991,16 +991,16 @@
         },
         {
             "name": "namet/socialite",
-            "version": "0.3",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/namet117/socialite.git",
-                "reference": "7a45ea8a46c4785c7ce8a18b3d00ac4fe558de88"
+                "reference": "06fa6db698229b70fdff3174530126e85ab7ab0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/namet117/socialite/7a45ea8a46c4785c7ce8a18b3d00ac4fe558de88.zip",
-                "reference": "7a45ea8a46c4785c7ce8a18b3d00ac4fe558de88",
+                "url": "https://api.github.com/repos/namet117/socialite/zipball/06fa6db698229b70fdff3174530126e85ab7ab0b",
+                "reference": "06fa6db698229b70fdff3174530126e85ab7ab0b",
                 "shasum": ""
             },
             "require": {
@@ -1032,7 +1032,7 @@
                 "socialite",
                 "wechat"
             ],
-            "time": "2018-05-09T06:26:50+00:00"
+            "time": "2018-05-16T16:43:26+00:00"
         },
         {
             "name": "nesbot/carbon",
