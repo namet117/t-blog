@@ -1,3 +1,4 @@
+.idea/
 /public/storage
 /storage/*.key
 /.vagrant
