@@ -1,1 +1,11 @@
-.idea/
+/public/storage
+/storage/*.key
+/.vagrant
+Homestead.json
+Homestead.yaml
+nohup.out
+node_modules
+*.log
+.DS_Store
+.env
+/vendor
