@@ -16,6 +16,7 @@
         "font-awesome": "^4.7.0",
         "github-markdown-css": "^2.10.0",
         "jquery": "^3.2",
-        "laravel-mix": "^2.0"
+        "laravel-mix": "^2.0",
+        "layui-src": "^2.2.5"
     }
 }

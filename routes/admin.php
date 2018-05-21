@@ -3,6 +3,6 @@
 /**
  * Admin Routes
  */
-Route::middleware(['admin'])->group(function() {
+Route::group(function() {
     Route::view('/', 'admin.index');
 });
