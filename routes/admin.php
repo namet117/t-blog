@@ -3,6 +3,4 @@
 /**
  * Admin Routes
  */
-Route::group(function() {
-    Route::view('/', 'admin.index');
-});
+Route::view('/', 'admin.layout.default');
