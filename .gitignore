@@ -1,4 +1,4 @@
-.idea/
+.idea
 /public/storage
 /storage/*.key
 /.vagrant
@@ -10,3 +10,8 @@ node_modules
 .DS_Store
 .env
 /vendor
+npm-debug.log
+.project
+.vscode
+.history
+\.settings/
