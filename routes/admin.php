@@ -3,4 +3,4 @@
 /**
  * Admin Routes
  */
-Route::view('/', 'admin.layout.default');
+Route::get('/', 'IndexController@dashboard')->name('admin.dashboard');

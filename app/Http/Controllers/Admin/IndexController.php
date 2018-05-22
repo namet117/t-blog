@@ -17,4 +17,14 @@ class IndexController extends BaseController
             return response(['message' => '用户名与密码不匹配'], 422);
         }
     }
+
+    public function dashboard()
+    {
+        $envs = [
+            ['name' => 'PHP_VERSION', 'value' => PHP_VERSION],
+            ['name' => 'TIME', 'value' => date('Y-m-d H:i:s')],
+        ];
+
+        return view('admin.dashboard', compact('envs'));
+    }
 }
