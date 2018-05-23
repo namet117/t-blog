@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Router from 'vue-router'
+import Router from 'vue-router';
 
-Vue.use(Router)
+Vue.use(Router);
 
 const routes = [
     // {
@@ -15,7 +15,7 @@ const routes = [
     {
         path: '/login',
         name: 'admin-log',
-        component: resolve => require(['../components/admin/home/login'], resolve),
+        component: resolve => require(['../views/admin/home/login'], resolve),
         hidden: true
     },
     // {
@@ -42,8 +42,8 @@ const routes = [
     //         }
     //     ]
     // },
-]
+];
 
-const router = new Router({ routes })
+const router = new Router({ routes });
 
-export default router
+export default router;
