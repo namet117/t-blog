@@ -14,9 +14,11 @@ const routes = [
     // },
     {
         path: '/login',
-        name: 'admin-log',
+        meta: {
+            title: '登陆',
+        },
         component: resolve => require(['../views/admin/home/login'], resolve),
-        hidden: true
+        hidden: true,
     },
     // {
     //     path: '/',

@@ -263,6 +263,6 @@ export function deepClone(source) {
 }
 
 export function title(title) {
-    title = title || 'T-SHOP';
+    title = (title ? `${title} - ` : '') + 'T-Admin';
     window.document.title = title;
 }
