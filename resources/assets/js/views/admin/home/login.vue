@@ -5,14 +5,14 @@
                 <h3 class="title">T-BLOG Admin</h3>
             </div>
             <el-form-item prop="username">
-                <span class="icon-container">
+                <!-- <span class="icon-container">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                </span>
+                </span> -->
                 <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="用户名"/>
             </el-form-item>
 
             <el-form-item prop="password">
-                <span class="svg-container"></span>
+                <!-- <span class="svg-container"></span> -->
                 <el-input name="password" :type="passwordType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on" placeholder="密码"/>
                 <span class="show-pwd" @click="showPwd"><i class="el-icon-view"></i></span>
             </el-form-item>
