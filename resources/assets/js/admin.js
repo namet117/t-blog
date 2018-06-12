@@ -8,10 +8,15 @@ import http from './tools/http';
 import App from './views/admin/App';
 import store from './store';
 import 'font-awesome/css/font-awesome.css'
+import '../sass/admin/index.scss'
+// import './errorLog'// error log
+import './permission' // permission control
+
 
 Vue.use(ElementUI);
 
 Vue.prototype.$http = http;
+Vue.config.productionTip = false;
 
 new Vue({
     el: '#app',
