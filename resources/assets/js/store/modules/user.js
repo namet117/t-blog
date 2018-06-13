@@ -46,24 +46,40 @@ const user = {
     actions: {
         // 用户名登录
         LoginByUsername({commit}, userInfo) {
+            // --Fake--
             const username = userInfo.username.trim();
-            commit('SET_TOKEN', username);
+            commit('SET_TOKEN', 'a1234567890b');
             setToken('a1234567890b');
-            return true;
-            // return new Promise((resolve, reject) => {
-            //     loginByUsername(username, userInfo.password).then(response => {
-            //         const data = response.data
-            //         commit('SET_TOKEN', data.token)
-            //         setToken(response.data.token)
-            //         resolve()
-            //     }).catch(error => {
-            //         reject(error)
-            //     })
-            // })
+            return ;
+
+            return new Promise((resolve, reject) => {
+                loginByUsername(username, userInfo.password).then(response => {
+                    const data = response.data
+                    commit('SET_TOKEN', data.token)
+                    setToken(response.data.token)
+                    resolve()
+                }).catch(error => {
+                    reject(error)
+                })
+            })
         },
 
         // 获取用户信息
         GetUserInfo({commit, state}) {
+            // --Fake--
+            let data = {
+                roles: ['admin'],
+                name: 'name-T',
+                avatar: 'https://file.namet.xyz/images/avatar.jpg',
+                introduction: 'First Admin User'
+            };
+            commit('SET_ROLES', data.roles);
+
+            commit('SET_NAME', data.name);
+            commit('SET_AVATAR', data.avatar);
+            commit('SET_INTRODUCTION', data.introduction);
+            return;
+
             return new Promise((resolve, reject) => {
                 getUserInfo(state.token).then(response => {
                     if (!response.data) { // 由于mockjs 不支持自定义状态码只能这样hack

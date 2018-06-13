@@ -27,10 +27,31 @@ noCache: true                if true ,the page will no be cached(default is fals
 }
 **/
 export const constantRouterMap = [
-    { path: '/login', component: resolve => require(['../views/admin/home/login'], resolve), hidden: true },
+    {
+        path: '/login',
+        component: resolve => require(['../views/admin/home/login'], resolve),
+        meta: {
+            title: '登陆'
+        },
+        hidden: true
+    },
     // { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
-    { path: '/404', component: resolve => require(['../views/admin/errorPage/404'], resolve), hidden: true },
-    { path: '/401', component: resolve => require(['../views/admin/errorPage/401'], resolve), hidden: true },
+    {
+        path: '/404',
+        component: resolve => require(['../views/admin/errorPage/404'], resolve),
+        meta: {
+            title: '404-找不到页面'
+        },
+        hidden: true
+    },
+    {
+        path: '/401',
+        component: resolve => require(['../views/admin/errorPage/401'], resolve),
+        meta: {
+            title: '401-无权限访问'
+        },
+        hidden: true
+    },
     {
         path: '',
         component: Layout,
@@ -39,7 +60,11 @@ export const constantRouterMap = [
             path: 'dashboard',
             component: resolve => require(['../views/admin/home/home'], resolve),
             name: 'dashboard',
-            meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+            meta: {
+                title: '首页',
+                icon: 'dashboard',
+                noCache: true
+            }
         }]
     }
     // {
