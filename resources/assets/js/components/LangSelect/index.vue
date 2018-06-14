@@ -37,5 +37,3 @@ export default {
   vertical-align: -5px!important;
 }
 </style>
-
-
