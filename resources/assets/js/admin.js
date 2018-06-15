@@ -15,10 +15,10 @@ import './permission';
 import i18n from './lang';
 
 Vue.use(ElementUI, {
-  size: 'medium', // set element-ui default size
+  size: 'medium',
   i18n: (key, value) => i18n.t(key, value)
 });
-Vue.prototype.$http = http;
+// Vue.prototype.$http = http;
 Vue.config.productionTip = false;
 
 new Vue({
