@@ -9,7 +9,7 @@ import store from './store';
 import 'font-awesome/css/font-awesome.css';
 import '../sass/admin/index.scss';
 // import './errorLog'
-import './icons';
+// import './icons';
 import './permission';
 import i18n from './lang';
 

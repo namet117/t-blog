@@ -70,7 +70,7 @@ export const constantRouterMap = [
             name: 'dashboard',
             meta: {
                 title: '首页',
-                icon: 'dashboard',
+                icon: 'home',
                 noCache: true
             }
         }]
@@ -124,17 +124,17 @@ export const asyncRouterMap = [
     //     }]
     // },
 
-    {
-        path: '/icon',
-        component: Layout,
-        children: [{
-            path: 'index',
-            // component: _import('svg-icons/index'),
-            component: resolve => require(['@/views/admin/svg-icons/index'], resolve),
-            name: 'icons',
-            meta: { title: 'icons', icon: 'icon', noCache: true }
-        }]
-    },
+    // {
+    //     path: '/icon',
+    //     component: Layout,
+    //     children: [{
+    //         path: 'index',
+    //         // component: _import('svg-icons/index'),
+    //         component: resolve => require(['@/views/admin/svg-icons/index'], resolve),
+    //         name: 'icons',
+    //         meta: { title: 'icons', icon: 'icon', noCache: true }
+    //     }]
+    // },
 
     // {
     //     path: '/components',
