@@ -35,6 +35,14 @@ export const constantRouterMap = [
         },
         hidden: true
     },
+    {
+        path: '/test',
+        component: resolve => require(['../views/admin/home/home'], resolve),
+        meta: {
+            title: 'TEST'
+        },
+        hidden: true
+    },
     // { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
     {
         path: '/404',
@@ -116,16 +124,17 @@ export const asyncRouterMap = [
     //     }]
     // },
 
-    // {
-    //     path: '/icon',
-    //     component: Layout,
-    //     children: [{
-    //         path: 'index',
-    //         component: _import('svg-icons/index'),
-    //         name: 'icons',
-    //         meta: { title: 'icons', icon: 'icon', noCache: true }
-    //     }]
-    // },
+    {
+        path: '/icon',
+        component: Layout,
+        children: [{
+            path: 'index',
+            // component: _import('svg-icons/index'),
+            component: resolve => require(['@/views/admin/svg-icons/index'], resolve),
+            name: 'icons',
+            meta: { title: 'icons', icon: 'icon', noCache: true }
+        }]
+    },
 
     // {
     //     path: '/components',

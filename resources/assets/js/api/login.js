@@ -5,23 +5,24 @@ export function loginByUsername(username, password) {
         username,
         password
     }
+    console.log(data);
     return request({
-        url: '/admin/login/login',
+        url: '/admin/login',
         method: 'post',
         data
-    })
+    });
 }
 
 export function logout() {
     return request({
-        url: '/admin/login/logout',
+        url: '/admin/logout',
         method: 'post'
     })
 }
 
 export function getUserInfo(token) {
     return request({
-        url: '/user/info',
+        url: '/admin/user/info',
         method: 'get',
         params: { token }
     })

@@ -10,7 +10,7 @@ class AuthController extends Controller
     public function login()
     {
         return [
-            'token' => time(),
+            'token' => date('Y-m-d H:i:s'),
         ];
     }
 }

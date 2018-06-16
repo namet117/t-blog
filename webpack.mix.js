@@ -1,8 +1,17 @@
 let mix = require('laravel-mix');
 const path = require('path');
 const cleanWebpackPlugin = require('clean-webpack-plugin');
-
+function resolve (dir) {
+  return path.join(__dirname, '.', dir)
+}
 mix.webpackConfig({
+    devtool: 'source-map',
+    resolve: {
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+          '@': resolve('resources/assets/js'),
+        }
+    },
     output: {
         publicPath: "/",
         chunkFilename: 'js/[name].[hash].chunk.js'
@@ -13,7 +22,19 @@ mix.webpackConfig({
             dry: false,
             verbose: true,
         }),
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader',
+                include: [resolve('resources/assets/js/icons')],
+                options: {
+                    symbolId: 'icon-[name]'
+                }
+            },
+        ]
+    }
 });
 
 // 停用通知
