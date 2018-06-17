@@ -35,14 +35,6 @@ export const constantRouterMap = [
         },
         hidden: true
     },
-    {
-        path: '/test',
-        component: resolve => require(['../views/admin/home/home'], resolve),
-        meta: {
-            title: 'TEST'
-        },
-        hidden: true
-    },
     // { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
     {
         path: '/404',
@@ -86,13 +78,13 @@ export const constantRouterMap = [
     //     meta: { title: 'documentation', icon: 'documentation', noCache: true }
     //   }]
     // }
-]
+];
 
 export default new Router({
     // mode: 'history', // require service support
     scrollBehavior: () => ({ y: 0 }),
     routes: constantRouterMap
-})
+});
 
 export const asyncRouterMap = [
     // {
@@ -169,12 +161,27 @@ export const asyncRouterMap = [
         name: 'charts',
         meta: {
             title: 'charts',
-            icon: 'chart'
+            icon: 'area-charts'
         },
         children: [
-            { path: 'keyboard', component: resolve => require(['../views/admin/charts/keyboard'], resolve), name: 'keyboardChart', meta: { title: 'keyboardChart', noCache: true }},
-            { path: 'line', component: resolve => require(['../views/admin/charts/line'], resolve), name: 'lineChart', meta: { title: 'lineChart', noCache: true }},
-            { path: 'mixchart', component: resolve => require(['../views/admin/charts/mixChart'], resolve), name: 'mixChart', meta: { title: 'mixChart', noCache: true }}
+            {
+                path: 'keyboard',
+                component: resolve => require(['../views/admin/charts/keyboard'], resolve),
+                name: 'keyboardChart',
+                meta: {title: 'keyboardChart', noCache: true}
+            },
+            {
+                path: 'line',
+                component: resolve => require(['../views/admin/charts/line'], resolve),
+                name: 'lineChart',
+                meta: {title: 'lineChart', noCache: true}
+            },
+            {
+                path: 'mixchart',
+                component: resolve => require(['../views/admin/charts/mixChart'], resolve),
+                name: 'mixChart',
+                meta: {title: 'mixChart', noCache: true}
+            }
         ]
     },
 
@@ -220,8 +227,18 @@ export const asyncRouterMap = [
             icon: 'form'
         },
         children: [
-            { path: 'create-form', component: resolve => require(['../views/admin/form/create'], resolve), name: 'createForm', meta: { title: 'createForm', icon: 'table' }},
-            { path: 'edit-form', component: resolve => require(['../views/admin/form/edit'], resolve), name: 'editForm', meta: { title: 'editForm', icon: 'table' }}
+            {
+                path: 'create-form',
+                component: resolve => require(['../views/admin/form/create'], resolve),
+                name: 'createForm',
+                meta: {title: 'createForm', icon: 'table'}
+            },
+            {
+                path: 'edit-form',
+                component: resolve => require(['../views/admin/form/edit'], resolve),
+                name: 'editForm',
+                meta: {title: 'editForm', icon: 'table'}
+            }
         ]
     },
 
@@ -292,5 +309,5 @@ export const asyncRouterMap = [
     //     children: [{ path: 'index', component: _import('i18n-demo/index'), name: 'i18n', meta: { title: 'i18n', icon: 'international' }}]
     // },
 
-    { path: '*', redirect: '/404', hidden: true }
+    {path: '*', redirect: '/404', hidden: true}
 ]
