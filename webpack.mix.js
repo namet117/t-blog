@@ -22,19 +22,7 @@ mix.webpackConfig({
             dry: false,
             verbose: true,
         }),
-    ],
-    module: {
-        rules: [
-            {
-                test: /\.svg$/,
-                loader: 'svg-sprite-loader',
-                include: [resolve('resources/assets/js/icons')],
-                options: {
-                    symbolId: 'icon-[name]'
-                }
-            },
-        ]
-    }
+    ]
 });
 
 // 停用通知

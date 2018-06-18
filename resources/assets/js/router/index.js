@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// const _import = s => '../views/admin/' + s;
+
 // in development-env not use lazy-loading, because lazy-loading too many pages will cause webpack hot update too slow. so only in production use lazy-loading;
 // detail: https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading
 Vue.use(Router);
@@ -88,32 +88,35 @@ export default new Router({
 
 export const asyncRouterMap = [
     // {
-    //     path: '/permission',
+    //     path: '/system',
     //     component: Layout,
-    //     redirect: '/permission/index',
+    //     redirect: '/system/index',
     //     alwaysShow: true, // will always show the root menu
     //     meta: {
     //         title: 'permission',
     //         icon: 'lock',
     //         roles: ['admin', 'editor'] // you can set roles in root nav
     //     },
-    //     children: [{
-    //         path: 'page',
-    //         component: _import('permission/page'),
-    //         name: 'pagePermission',
-    //         meta: {
-    //             title: 'pagePermission',
-    //             roles: ['admin'] // or you can only set roles in sub nav
-    //         }
-    //     }, {
-    //         path: 'directive',
-    //         component: _import('permission/directive'),
-    //         name: 'directivePermission',
-    //         meta: {
-    //             title: 'directivePermission'
-    //             // if do not set roles, means: this page does not require permission
-    //         }
-    //     }]
+    //     children: [
+    //         {
+    //             path: 'page',
+    //             component: resolve => require(['@/views/admin/errorPage/404'], resolve),
+    //             name: 'pagePermission',
+    //             meta: {
+    //                 title: 'pagePermission',
+    //                 roles: ['admin'] // or you can only set roles in sub nav
+    //             }
+    //         },
+    //         {
+    //             path: 'directive',
+    //             component: _import('permission/directive'),
+    //             name: 'directivePermission',
+    //             meta: {
+    //                 title: 'directivePermission'
+    //                 // if do not set roles, means: this page does not require permission
+    //             }
+    //         },
+    //     ]
     // },
 
     // {
@@ -161,26 +164,38 @@ export const asyncRouterMap = [
         name: 'charts',
         meta: {
             title: 'charts',
-            icon: 'area-charts'
+            icon: 'area-chart'
         },
         children: [
             {
                 path: 'keyboard',
                 component: resolve => require(['../views/admin/charts/keyboard'], resolve),
                 name: 'keyboardChart',
-                meta: {title: 'keyboardChart', noCache: true}
+                meta: {
+                    title: 'keyboardChart',
+                    noCache: true,
+                    icon: 'keyboard-o',
+                }
             },
             {
                 path: 'line',
                 component: resolve => require(['../views/admin/charts/line'], resolve),
                 name: 'lineChart',
-                meta: {title: 'lineChart', noCache: true}
+                meta: {
+                    title: 'lineChart',
+                    noCache: true,
+                    icon: 'line-chart',
+                }
             },
             {
                 path: 'mixchart',
                 component: resolve => require(['../views/admin/charts/mixChart'], resolve),
                 name: 'mixChart',
-                meta: {title: 'mixChart', noCache: true}
+                meta: {
+                    title: 'mixChart',
+                    noCache: true,
+                    icon: 'bar-chart',
+                }
             }
         ]
     },
@@ -217,30 +232,36 @@ export const asyncRouterMap = [
     //     ]
     // },
 
-    {
-        path: '/form',
-        component: Layout,
-        redirect: 'noredirect',
-        name: 'form',
-        meta: {
-            title: 'form',
-            icon: 'form'
-        },
-        children: [
-            {
-                path: 'create-form',
-                component: resolve => require(['../views/admin/form/create'], resolve),
-                name: 'createForm',
-                meta: {title: 'createForm', icon: 'table'}
-            },
-            {
-                path: 'edit-form',
-                component: resolve => require(['../views/admin/form/edit'], resolve),
-                name: 'editForm',
-                meta: {title: 'editForm', icon: 'table'}
-            }
-        ]
-    },
+    // {
+    //     path: '/form',
+    //     component: Layout,
+    //     redirect: 'noredirect',
+    //     name: 'form',
+    //     meta: {
+    //         title: 'form',
+    //         icon: 'form'
+    //     },
+    //     children: [
+    //         {
+    //             path: 'create-form',
+    //             component: resolve => require(['../views/admin/form/create'], resolve),
+    //             name: 'createForm',
+    //             meta: {
+    //                 title: 'createForm',
+    //                 icon: 'table'
+    //             }
+    //         },
+    //         {
+    //             path: 'edit-form',
+    //             component: resolve => require(['../views/admin/form/edit'], resolve),
+    //             name: 'editForm',
+    //             meta: {
+    //                 title: 'editForm',
+    //                 icon: 'table'
+    //             }
+    //         }
+    //     ]
+    // },
 
     // {
     //     path: '/error',
@@ -310,4 +331,4 @@ export const asyncRouterMap = [
     // },
 
     {path: '*', redirect: '/404', hidden: true}
-]
+];
