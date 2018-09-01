@@ -12903,4 +12903,3 @@ module.exports = __webpack_require__("./resources/assets/sass/app.scss");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.js.map
