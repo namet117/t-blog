@@ -156,7 +156,7 @@ class ArticleController extends Controller
         $form->number('praise_times', '赞次数');
         $form->number('comment_times', '评论次数');
         $form->switch('is_top', '置顶');
-        $form->editor('content', '内容');
+        $form->simplemde('original_md', 'MarkDown');
 
         return $form;
     }

@@ -1,5 +1,5 @@
 <?php
-
+use \App\Admin\Extensions\{Simplemde};
 /**
  * Laravel-admin - admin builder based on Laravel.
  * @author z-song <https://github.com/z-song>
@@ -19,3 +19,6 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+
+/* MarkDown文本编辑器 */
+\Encore\Admin\Form::extend('simplemde', Simplemde::class);
