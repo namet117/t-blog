@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 
 // 停用通知
-mix.disableNotifications();
+// mix.disableNotifications();
 // 编译js&css
 mix
 .js('resources/assets/js/app.js', 'public/js')

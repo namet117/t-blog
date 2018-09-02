@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Article;
 use App\Http\Controllers\Controller;
+use App\Tag;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -18,6 +19,7 @@ class ArticleController extends Controller
      * Index interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function index(Content $content)
@@ -33,6 +35,7 @@ class ArticleController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function show($id, Content $content)
@@ -47,6 +50,7 @@ class ArticleController extends Controller
      *
      * @param mixed   $id
      * @param Content $content
+     *
      * @return Content
      */
     public function edit($id, Content $content)
@@ -60,6 +64,7 @@ class ArticleController extends Controller
      * Create interface.
      *
      * @param Content $content
+     *
      * @return Content
      */
     public function create(Content $content)
@@ -78,22 +83,27 @@ class ArticleController extends Controller
     {
         $grid = new Grid(new Article);
 
-        $grid->id('Id');
-        $grid->title('Title');
-        $grid->keywords('Keywords');
-        $grid->abstract('Abstract');
-        $grid->original_md('Original md');
-        $grid->content('Content');
-        $grid->tag_ids('Tag ids');
+        $grid->id('Id')->sortable();
+        $grid->title('标题');
+        $grid->keywords('关键字');
+        $grid->tag_ids('标签')->display(function ($tag_ids) {
+            $tag_ids = explode(',', substr($tag_ids, 1, - 1));
+            $tags = Tag::whereIn('id', $tag_ids)->pluck('tag_name')->toArray();
+            $html = '';
+            foreach ($tags as $tag) {
+                $html .= '<span class="badge">' . $tag . '</span>';
+            }
+
+            return $html;
+        });
         $grid->slug('Slug');
-        $grid->first_img('First img');
-        $grid->view_times('View times');
-        $grid->praise_times('Praise times');
-        $grid->comment_times('Comment times');
-        $grid->is_top('Is top');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
-        $grid->deleted_at('Deleted at');
+        $grid->view_times('浏览数')->sortable();
+        $grid->praise_times('赞数')->sortable();
+        $grid->comment_times('评论数')->sortable();
+        $grid->is_top('是否置顶')->sortable();
+        $grid->updated_at('最后更新时间')->sortable();
+        // 设置初始排序条件
+        $grid->model()->orderBy('id', 'desc');
 
         return $grid;
     }
@@ -101,7 +111,8 @@ class ArticleController extends Controller
     /**
      * Make a show builder.
      *
-     * @param mixed   $id
+     * @param mixed $id
+     *
      * @return Show
      */
     protected function detail($id)
@@ -109,21 +120,21 @@ class ArticleController extends Controller
         $show = new Show(Article::findOrFail($id));
 
         $show->id('Id');
-        $show->title('Title');
-        $show->keywords('Keywords');
-        $show->abstract('Abstract');
-        $show->original_md('Original md');
-        $show->content('Content');
-        $show->tag_ids('Tag ids');
+        $show->title('标题');
+        $show->keywords('关键字');
+        $show->abstract('摘要');
+        $show->original_md('原始MarkDown');
+        $show->content('HTML内容');
+        $show->tag_ids('标签');
         $show->slug('Slug');
-        $show->first_img('First img');
-        $show->view_times('View times');
-        $show->praise_times('Praise times');
-        $show->comment_times('Comment times');
-        $show->is_top('Is top');
-        $show->created_at('Created at');
-        $show->updated_at('Updated at');
-        $show->deleted_at('Deleted at');
+        $show->first_img('首图');
+        $show->view_times('浏览次数');
+        $show->praise_times('赞次数');
+        $show->comment_times('评论次数');
+        $show->is_top('置顶');
+        $show->created_at('创建时间');
+        $show->updated_at('修改时间');
+        $show->deleted_at('删除时间');
 
         return $show;
     }
@@ -136,19 +147,16 @@ class ArticleController extends Controller
     protected function form()
     {
         $form = new Form(new Article);
-
-        $form->text('title', 'Title');
-        $form->text('keywords', 'Keywords');
-        $form->textarea('abstract', 'Abstract');
-        $form->textarea('original_md', 'Original md');
-        $form->textarea('content', 'Content');
-        $form->text('tag_ids', 'Tag ids');
+        $form->text('title', '标题');
+        $form->text('keywords', '关键字');
+        $form->checkbox('tag_ids', '标签')->options(Tag::all()->pluck('tag_name', 'id')->toArray());
         $form->text('slug', 'Slug');
-        $form->text('first_img', 'First img');
-        $form->number('view_times', 'View times');
-        $form->number('praise_times', 'Praise times');
-        $form->number('comment_times', 'Comment times');
-        $form->switch('is_top', 'Is top');
+        $form->url('first_img', '首图');
+        $form->number('view_times', '浏览次数');
+        $form->number('praise_times', '赞次数');
+        $form->number('comment_times', '评论次数');
+        $form->switch('is_top', '置顶');
+        $form->editor('content', '内容');
 
         return $form;
     }
