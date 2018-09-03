@@ -15,7 +15,7 @@ if (!function_exists('service')) {
         $name = strtolower($name);
         if (!isset($_services[ $name ])) {
             $class = '\\App\\Services\\' . ucfirst($name) . 'Service';
-            $_services[ $name ] = new $class();
+            $_services[ $name ] = app($class);
         }
 
         return $_services[ $name ];

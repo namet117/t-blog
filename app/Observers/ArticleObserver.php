@@ -10,29 +10,25 @@ class ArticleObserver
     {
         $article->content = (new ParserLib)->makeHtml($article->original_md);
         $article->abstract = mb_substr(strip_tags($article->content), 0, 200);
+        if (!empty($article->tag_ids) && is_array($article->tag_ids)) {
+            $tag_ids = ',' . implode(',', $article->tag_ids) . ',';
+            $article->tag_ids = $tag_ids;
+        }
+        if (!empty($article->original_md)) {
+            preg_match_all('/!\[file\]\((.+\.(jpg|png|jpeg|gif))\)/', $article->original_md, $urls);
+            if (!empty($urls[1]) && !empty($urls[1][0])) {
+                $article->first_img = $urls[1][0];
+            }
+        }
     }
-
-    // public function saved()
-    // {
-    //
-    // }
 
     public function deleted(Article $article)
     {
-        if ($article->tag_ids) {
-            $tag_ids = explode(',', trim($article->tag_ids, ','));
-            // 文章数 -1
-            \DB::table('tags')->whereIn('id', $tag_ids)->decrement('article_num', 1);
-        }
+        service('tag')->recount();
     }
 
-    public function created(Article $article)
+    public function saved(Article $article)
     {
-        if ($article->tag_ids) {
-            $tag_ids = explode(',', trim($article->tag_ids, ','));
-
-            // 文章数 +1
-            \DB::table('tags')->whereIn('id', $tag_ids)->increment('article_num', 1);
-        }
+        service('tag')->recount();
     }
 }

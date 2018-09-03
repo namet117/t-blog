@@ -9,8 +9,8 @@ Route::group([
     'namespace'     => config('admin.route.namespace'),
     'middleware'    => config('admin.route.middleware'),
 ], function (Router $router) {
+    $router->post('/upload-img', 'UploadController@img')->name('admin.uploadimg');
 
     $router->get('/', 'HomeController@index');
     $router->resource('content/articles', 'ArticleController');
-
 });

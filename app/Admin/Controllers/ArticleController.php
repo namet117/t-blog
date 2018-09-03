@@ -151,7 +151,6 @@ class ArticleController extends Controller
         $form->text('keywords', '关键字');
         $form->checkbox('tag_ids', '标签')->options(Tag::all()->pluck('tag_name', 'id')->toArray());
         $form->text('slug', 'Slug');
-        $form->url('first_img', '首图');
         $form->number('view_times', '浏览次数');
         $form->number('praise_times', '赞次数');
         $form->number('comment_times', '评论次数');
