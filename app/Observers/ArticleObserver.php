@@ -14,7 +14,7 @@ class ArticleObserver
             $tag_ids = ',' . implode(',', $article->tag_ids) . ',';
             $article->tag_ids = $tag_ids;
         }
-        if (!empty($article->original_md)) {
+        if (empty($article->first_img) && !empty($article->original_md)) {
             preg_match_all('/!\[file\]\((.+\.(jpg|png|jpeg|gif))\)/', $article->original_md, $urls);
             if (!empty($urls[1]) && !empty($urls[1][0])) {
                 $article->first_img = $urls[1][0];

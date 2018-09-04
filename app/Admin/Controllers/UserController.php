@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Tag;
+use App\User;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
@@ -10,7 +10,7 @@ use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
 
-class TagController extends Controller
+class UserController extends Controller
 {
     use HasResourceActions;
 
@@ -23,7 +23,8 @@ class TagController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('标签管理')
+            ->header('用户管理')
+            ->description('description')
             ->body($this->grid());
     }
 
@@ -37,7 +38,7 @@ class TagController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header('标签明细')
+            ->header('用户明细')
             ->body($this->detail($id));
     }
 
@@ -51,7 +52,7 @@ class TagController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('编辑标签')
+            ->header('编辑用户')
             ->body($this->form()->edit($id));
     }
 
@@ -64,7 +65,7 @@ class TagController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('新建标签')
+            ->header('创建用户')
             ->body($this->form());
     }
 
@@ -75,17 +76,16 @@ class TagController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Tag);
+        $grid = new Grid(new User);
 
-        $grid->id('Id')->sortable();
-        $grid->tag_name('名称');
-        $grid->article_num('文章数');
-        $grid->created_at('创建时间')->sortable();
-        $grid->updated_at('修改时间')->sortable();
-        $grid->actions(function ($actions) {
-            $actions->disableView();
+        $grid->id('Id');
+        $grid->username('用户名');
+        $grid->avatar('头像')->display(function ($avatar) {
+            return '<img src="' . $avatar . '" style="width:30px;height:30px;">';
         });
-        $grid->model()->orderBy('id', 'desc');
+        $grid->email('邮箱');
+        $grid->telephone('手机号');
+        $grid->created_at('注册时间');
 
         return $grid;
     }
@@ -98,13 +98,17 @@ class TagController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(Tag::findOrFail($id));
+        // TODO 展示他的点赞 收藏
+        $show = new Show(User::findOrFail($id));
 
         $show->id('Id');
-        $show->tag_name('名称');
-        $show->article_num('文章数');
+        $show->username('Username');
+        $show->email('Email');
+        $show->telephone('Telephone');
+        $show->avatar('Avatar');
+        $show->password('Password');
+        $show->remember_token('Remember token');
         $show->created_at('Created at');
-        $show->updated_at('Updated at');
 
         return $show;
     }
@@ -116,12 +120,16 @@ class TagController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Tag);
+        $form = new Form(new User);
 
-        $form->text('tag_name', '名称')->rules(function (Form $form) {
-            return 'required|unique:tags,tag_name,' . $form->model()->id . ',id';
-        });
-        $form->number('article_num', '文章数')->rules('integer', ['integer' => '文章数必须为整数']);
+        $form->text('username', 'Username');
+        $form->email('email', 'Email');
+        $form->text('telephone', 'Telephone');
+        $form->image('avatar', 'Avatar');
+        $form->password('password', 'Password');
+        $form->text('remember_token', 'Remember token');
+        $form->text('api_token', 'Api token');
+        $form->switch('is_admin', 'Is admin');
 
         return $form;
     }

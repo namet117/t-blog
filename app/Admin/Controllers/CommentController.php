@@ -2,15 +2,16 @@
 
 namespace App\Admin\Controllers;
 
-use App\Tag;
+use App\Comment;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Layout\Content;
 use Encore\Admin\Show;
+use function foo\func;
 
-class TagController extends Controller
+class CommentController extends Controller
 {
     use HasResourceActions;
 
@@ -23,7 +24,7 @@ class TagController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('标签管理')
+            ->header('评论管理')
             ->body($this->grid());
     }
 
@@ -37,7 +38,7 @@ class TagController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header('标签明细')
+            ->header('评论详情')
             ->body($this->detail($id));
     }
 
@@ -51,7 +52,7 @@ class TagController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('编辑标签')
+            ->header('编辑')
             ->body($this->form()->edit($id));
     }
 
@@ -64,7 +65,7 @@ class TagController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('新建标签')
+            ->header('新增')
             ->body($this->form());
     }
 
@@ -75,17 +76,18 @@ class TagController extends Controller
      */
     protected function grid()
     {
-        $grid = new Grid(new Tag);
+        $grid = new Grid(new Comment);
 
-        $grid->id('Id')->sortable();
-        $grid->tag_name('名称');
-        $grid->article_num('文章数');
-        $grid->created_at('创建时间')->sortable();
-        $grid->updated_at('修改时间')->sortable();
-        $grid->actions(function ($actions) {
-            $actions->disableView();
-        });
-        $grid->model()->orderBy('id', 'desc');
+        $grid->id('Id');
+        $grid->username('用户名');
+        $grid->site('站点');
+        $grid->email('邮箱');
+        $grid->ip('Ip');
+        $grid->content('内容');
+        $grid->rank('楼层');
+        $grid->notification('需通知');
+        $grid->is_notified('已通知');
+        $grid->created_at('创建时间');
 
         return $grid;
     }
@@ -98,13 +100,21 @@ class TagController extends Controller
      */
     protected function detail($id)
     {
-        $show = new Show(Tag::findOrFail($id));
-
+        $show = new Show(Comment::findOrFail($id));
+        // TODO 展示树形结构
         $show->id('Id');
-        $show->tag_name('名称');
-        $show->article_num('文章数');
+        $show->username('Username');
+        $show->site('Site');
+        $show->email('Email');
+        $show->ip('Ip');
+        $show->reply_to('Reply to');
+        $show->article_id('Article id');
+        $show->original_md('Original md');
+        $show->content('Content');
+        $show->rank('Rank');
+        $show->notification('需要通知');
+        $show->is_notified('已通知');
         $show->created_at('Created at');
-        $show->updated_at('Updated at');
 
         return $show;
     }
@@ -116,12 +126,19 @@ class TagController extends Controller
      */
     protected function form()
     {
-        $form = new Form(new Tag);
+        $form = new Form(new Comment);
 
-        $form->text('tag_name', '名称')->rules(function (Form $form) {
-            return 'required|unique:tags,tag_name,' . $form->model()->id . ',id';
-        });
-        $form->number('article_num', '文章数')->rules('integer', ['integer' => '文章数必须为整数']);
+        $form->text('username', 'Username');
+        $form->text('site', 'Site');
+        $form->email('email', 'Email');
+        $form->ip('ip', 'Ip');
+        $form->number('reply_to', 'Reply to');
+        $form->number('article_id', 'Article id');
+        $form->textarea('original_md', 'Original md');
+        $form->textarea('content', 'Content');
+        $form->number('rank', 'Rank')->default(1);
+        $form->switch('notification', 'Notification')->default(1);
+        $form->switch('is_notified', 'Is notified');
 
         return $form;
     }

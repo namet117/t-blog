@@ -12,7 +12,10 @@ Route::group([
     $router->post('/upload-img', 'UploadController@img')->name('admin.uploadimg');
 
     $router->get('/', 'HomeController@index');
-    $router->resource('content/articles', 'ArticleController');
 
+    $router->resource('content/articles', 'ArticleController');
     $router->resource('content/tags', 'TagController');
+    $router->resource('content/comments', 'CommentController');
+
+    $router->resource('users/users', 'UserController');
 });

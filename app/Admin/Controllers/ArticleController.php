@@ -147,15 +147,21 @@ class ArticleController extends Controller
     protected function form()
     {
         $form = new Form(new Article);
-        $form->text('title', '标题');
-        $form->text('keywords', '关键字');
-        $form->checkbox('tag_ids', '标签')->options(Tag::all()->pluck('tag_name', 'id')->toArray());
-        $form->text('slug', 'Slug');
+        $form->text('title', '标题')->rules('required|min:3');
+        $form->text('keywords', '关键字')->rules('required|min:3');
+        $form->checkbox('tag_ids', '标签')->options(
+            Tag::all()->pluck('tag_name', 'id')->toArray()
+        )->rules(
+            'required|array',
+            ['array' => '必须选择至少一个标签']
+        );
+        $form->text('slug', 'Slug')->rules('required', ['required' => 'Slug 不可为空']);
         $form->number('view_times', '浏览次数');
         $form->number('praise_times', '赞次数');
         $form->number('comment_times', '评论次数');
         $form->switch('is_top', '置顶');
-        $form->simplemde('original_md', 'MarkDown');
+        $form->url('first_img', '首图');
+        $form->simplemde('original_md', 'MarkDown')->rules('required', ['required' => '文章内容必须填写！']);
 
         return $form;
     }
