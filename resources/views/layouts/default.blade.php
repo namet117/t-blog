@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="author" contect="namet117">
-        <meta name="keywords" contect="@yield('keywords', 'blog'),namet117,php">
-        <meta name="description" contect="@yield('desc', '') - namet117的PHP技术博客">
+        <meta name="author" content="namet117">
+        <meta name="keywords" content="@yield('keywords', 'blog'),namet117,php">
+        <meta name="description" content="@yield('desc', '') - namet117的PHP技术博客">
         <title>@yield('title', 'BLOG') - T-Blog</title>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
