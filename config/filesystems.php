@@ -55,9 +55,9 @@ return [
             'visibility' => 'public',
         ],
         'admin' => [
-            'driver' => 'local',
+            'driver' => 'oss',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('IMG_URL') . '/test',
             'visibility' => 'public',
         ],
 

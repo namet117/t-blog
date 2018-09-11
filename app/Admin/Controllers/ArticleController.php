@@ -156,9 +156,9 @@ class ArticleController extends Controller
             ['array' => '必须选择至少一个标签']
         );
         $form->text('slug', 'Slug')->rules('required', ['required' => 'Slug 不可为空']);
-        $form->number('view_times', '浏览次数');
-        $form->number('praise_times', '赞次数');
-        $form->number('comment_times', '评论次数');
+        $form->number('view_times', '浏览次数')->min(0);
+        $form->number('praise_times', '赞次数')->min(0);
+        $form->number('comment_times', '评论次数')->min(0);
         $form->switch('is_top', '置顶');
         $form->url('first_img', '首图');
         $form->simplemde('original_md', 'MarkDown')->rules('required', ['required' => '文章内容必须填写！']);
