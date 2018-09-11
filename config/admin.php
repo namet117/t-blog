@@ -85,7 +85,7 @@ return [
     | If your page is going to be accessed via https, set it to `true`.
     |
     */
-    'secure' => config('app.env') === 'production',
+    'secure' => env('APP_ENV', 'production') === 'production',
 
     /*
     |--------------------------------------------------------------------------
