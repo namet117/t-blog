@@ -1,11 +1,4 @@
 <?php
-// 创建img-url
-if (!function_exists('createImgUrl')) {
-    function createImgUrl($url)
-    {
-        return env('CDN_PREFIX') . $url;
-    }
-}
 // 获取Service实例
 if (!function_exists('service')) {
     function service($name)
