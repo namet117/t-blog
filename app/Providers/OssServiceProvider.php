@@ -18,7 +18,6 @@ class OssServiceProvider extends ServiceProvider
     public function boot()
     {
         Storage::extend('oss', function ($app, $config) {
-debug($config);
             $client = new OssLib([
                 $config
             ]);
