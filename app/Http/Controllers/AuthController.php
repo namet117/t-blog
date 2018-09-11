@@ -14,7 +14,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('home');
         }
-        $config = array_except(config('oauth2'), ['qq']);
+        $config = config('oauth2');
         $names = [];
         foreach ($config as $name => $val) {
             $names[$name] = (new OAuth($name, $val))->authorize(false);

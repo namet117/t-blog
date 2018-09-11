@@ -1,33 +1,29 @@
 <?php
 
 return [
-    'wechat' => [
-        'appid' => 'wx74340ea7f92adc11',
-        'redirect_uri' => env('APP_URL') . '/oauth/wechat',
-        'secret' => '98ee280ac8abd65c2174fc6c4f057912',
-    ],
     // 新浪微博
     'weibo' => [
-        'appid' => '3798863111',
-        'redirect_uri' => env('APP_URL') . '/oauth/weibo',
-        'secret' => 'c3259b72fba9f5fe11d13fc4cb5e4741',
-        'scope' => 'email',
+        'appid' => env('OAUTH_WEIBO_APPID'),
+        'redirect_uri' => url(env('OAUTH_WEIBO_REDIRECT_URI')),
+        'secret' => env('OAUTH_WEIBO_SECRET'),
+        'scope' => env('OAUTH_WEIBO_SCOPE'),
     ],
     'qq' => [
-        'appid' => 'dsadasdas',
-        'redirect_uri' => env('APP_URL') . '/oauth/qq',
-        'secret' => 'c3259b72fba9f5fe11d13fc4cb5e4741',
-        'scope' => 'qq',
+        'appid' => env('OAUTH_QQ_APPID'),
+        'redirect_uri' => url(env('OAUTH_QQ_REDIRECT_URI')),
+        'secret' => env('OAUTH_QQ_SECRET'),
+        'scope' => env('OAUTH_QQ_SCOPE'),
     ],
     'baidu' => [
-        'appid' => 'Hefjzh4gjLNCjpjqbrySTwNx',
-        'redirect_uri' => env('APP_URL') . '/oauth/baidu',
-        'secret' => 'AqiVPBzGGsqi1NqlVsrfmDmD8WmIW93g',
+        'appid' => env('OAUTH_BAIDU_APPID'),
+        'redirect_uri' => url(env('OAUTH_BAIDU_REDIRECT_URI')),
+        'secret' => env('OAUTH_BAIDU_SECRET'),
+        'scope' => env('OAUTH_BAIDU_SCOPE'),
     ],
     'github' => [
-        'appid' => '238a1616fb979ea5d7e1',
-        'redirect_uri' => env('APP_URL') . '/oauth/github',
-        'secret' => 'c65a48f6bfa15afbd3166c57f4494096cc5120cc',
-        'scope' => 'user:email',
+        'appid' => env('OAUTH_GITHUB_APPID'),
+        'redirect_uri' => url(env('OAUTH_GITHUB_REDIRECT_URI')),
+        'secret' => env('OAUTH_GITHUB_SECRET'),
+        'scope' => env('OAUTH_GITHUB_SCOPE'),
     ],
 ];

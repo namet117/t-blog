@@ -19,3 +19,8 @@ Route::resource('comment', 'CommentController', ['only' => ['store'],]);
 Route::get('login', 'AuthController@index')->name('login');
 Route::post('logout', 'AuthController@logout')->name('logout');
 Route::get('/oauth/{name}', 'AuthController@login')->name('oauth.login');
+
+
+Route::get('/test', function () {
+    return url("vendor/laravel-admin/AdminLTE/dist/css/AdminLTE.min.css");
+});
