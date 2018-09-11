@@ -31,3 +31,14 @@ if (!function_exists('random_color')) {
         return '#' . implode('', $colors);
     }
 }
+
+if (!function_exists('create_url')) {
+    function create_url($url)
+    {
+        if (preg_match('/^https?::\//', $url)) {
+            return $url;
+        }
+
+        return rtrim(config('app.url'), '/') . '/' . ltrim($url, '/');
+    }
+}

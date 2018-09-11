@@ -36,7 +36,6 @@ class UserService extends BaseService
                 'username' => $infos['uname'],
                 'avatar' => $infos['avatar'],
                 'remember_token' => bcrypt($infos['uname'] . '#' . time()),
-                'api_token' => mt_rand(1000000, 9999999),
             ]);
 
             OauthUser::create([
