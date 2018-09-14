@@ -61,7 +61,7 @@
                         @foreach ($comments as $comment)
                         <li class="list-group-item media" style="margin-top:0px;" id="comment-{{ $comment->id }}" data-id="{{ $comment->id }}" data-rank="{{ $comment->rank }}">
                             <div class="avatar center pull-left">
-                                <img src="http://file.namet.xyz/users/d_2.jpg?x-oss-process=style/avatar-sm" alt="Avatar">
+                                <img src="https://file.namet.xyz/users/d_2.jpg?x-oss-process=style/avatar-sm" alt="Avatar">
                             </div>
                             <div class="detail">
                                 <div class="profile">

@@ -44,7 +44,7 @@
     </div>
     <div class="panel-body friend-links">
         <a href="https://laravel-china.org/topics" target="_blank">Laravel China</a>
-        <a href="http://oschina.net" target="_blank">OSChina开源中国</a>
+        <a href="https://oschina.net" target="_blank">OSChina开源中国</a>
         <a href="https://www.litblc.com/" target="_blank">怀修博客</a>
     </div>
 </div>
