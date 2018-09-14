@@ -15,8 +15,10 @@ class UploadController extends Controller
 {
     public function img(Request $request)
     {
-        $path = $request->file('image')->store('/' . date('Ymd'), 'public');
+file_put_contents('l1.log', print_r((array)$request->files, true) . "\n", FILE_APPEND);
+//return ['url' => 'https://file.namet.xyz/images/20180904/abcdefg-min.jpg'];
+        $path = $request->file('image')->store('/' . date('Ymd'), 'admin');
 
-//        return ['url' => Storage::disk('public')->url($path)];
+        return ['url' => Storage::disk('admin')->url($path)];
     }
 }
