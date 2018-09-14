@@ -73,7 +73,7 @@
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                   let data = XMLHttpRequest.responseJSON;
                   let html = '上传图片出错了';
-                  if (status === 422) {
+                  if (parseInt(status) === 422) {
                     html = data.errors.image.join('<br>')
                   } else {
                     html = data.message;

@@ -123,7 +123,6 @@ class OssLib implements AdapterInterface
 
     public function writeStream($path, $resource, Config $config)
     {
-file_put_contents('l1.log', print_r($path, true) . "\n", FILE_APPEND);
         $this->_client->putObject($this->_bucket, $path, stream_get_contents($resource));
 
         return true;
