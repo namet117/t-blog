@@ -57,7 +57,7 @@ return [
         'admin' => [
             'driver' => 'oss',
             'root' => storage_path('app/public'),
-            'url' => env('IMG_URL') . '/test',
+            'url' => env('IMG_URL'),
             'visibility' => 'public',
         ],
 

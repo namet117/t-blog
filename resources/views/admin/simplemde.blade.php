@@ -71,7 +71,14 @@
                     simplemde.value(simplemde.value() + "\n ![file](" + data.url + ") \n");
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("上传图片出错了");
+                  let data = XMLHttpRequest.responseJSON;
+                  let html = '上传图片出错了';
+                  if (status === 422) {
+                    html = data.errors.image.join('<br>')
+                  } else {
+                    html = data.message;
+                  }
+                  alert(html);
                 }
             });
         }
