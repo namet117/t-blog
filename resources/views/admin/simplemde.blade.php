@@ -34,12 +34,13 @@
         });
 
         simplemde.codemirror.on('paste', function (editor, e) {
-            if (!e.clipboardData && e.clipboardData.files) {
-                alert('浏览器不支持此操作');
-                return;
-            }
-            var dataList = e.clipboardData.items;
-            batchUpload(dataList, editor);
+          e.preventDefault();
+            // if (!e.clipboardData && e.clipboardData.files) {
+            //     alert('浏览器不支持此操作');
+            //     return;
+            // }
+            // var dataList = e.clipboardData.items;
+            // batchUpload(dataList, editor);
         });
 
         function batchUpload(dataList) {

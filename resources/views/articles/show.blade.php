@@ -105,22 +105,8 @@
                         <a href="#" id="cancel-reply" class="pull-right">取消回复</a>
                         <div class="well well-sm" id="reply-to-content"></div>
                     </div>
-                    <div class="form-group">
-                        <label for="username"><span class="red-asterisk">* </span>昵称👨</label>
-                        <input type="text" class="form-control" name="username" value="{{ old('username') }}" id="username" placeholder="十个汉字以内" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="site">站点🔗</label>
-                        <input type="url" class="form-control" name="site" id="site" value="{{ old('site') }}" placeholder="站点url">
-                    </div>
-                    <div class="form-group">
-                        <label for="email"><span class="red-asterisk">* </span>邮箱📮</label>
-                        <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="绝不外泄🙊，仅用作发送评论回复！" required>
-                    </div>
                     <div class="alert alert-success" role="alert">
                         😊请文明发言～～
-                        <br>
-                        支持MarkDown格式，但暂不支持上传图片🤦‍，正在努力中💪💪💪
                     </div>
                     <textarea class="form-control" id="mde-area" name="original_md" rows="5" cols="50">{{ old('original_md') }}</textarea>
                     <div class="checkbox">
