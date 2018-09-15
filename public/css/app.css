@@ -8496,15 +8496,15 @@ body {
 }
 
 .article-comment .panel-heading {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .article-comment .panel-body {
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .article-comment .panel-body .avatar {
-  padding-right: 0px;
+  padding-right: 0;
   border-radius: 25px;
   overflow: hidden;
   margin-right: 10px;

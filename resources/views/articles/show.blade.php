@@ -124,15 +124,10 @@
 @endsection
 
 @section('footer_script')
-<script src="https://cdn.bootcss.com/simplemde/1.7.1/simplemde.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        new SimpleMDE({
-            element: $('#mde-area')[0],
-            autoDownloadFontAwesome: false,
-        });
-    });
+  <scrip src="{{ mix('js/article.js') }}"></scrip>
+  <script src="https://cdn.bootcss.com/simplemde/1.7.1/simplemde.min.js"></script>
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
     hljs.initHighlightingOnLoad();
-</script>
+  </script>
 @endsection
