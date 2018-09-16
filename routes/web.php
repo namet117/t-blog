@@ -12,10 +12,16 @@ Route::get('/article/{article}/{slug?}', 'ArticleController@show')->name('articl
 // 个人简介
 Route::get('/about', 'HomeController@about')->name('about');
 
-// 评论
-Route::resource('comment', 'CommentController', ['only' => ['store'],]);
-
 // 账号相关
 Route::get('login', 'AuthController@index')->name('login');
 Route::post('logout', 'AuthController@logout')->name('logout');
 Route::get('/oauth/{name}', 'AuthController@login')->name('oauth.login');
+
+/* 需要登陆的功能 */
+Route::middleware('auth')->group(function () {
+    // 评论
+    Route::resource('comment', 'CommentController', ['only' => ['store']]);
+
+    // 图片上传
+    Route::post('/upload-image', 'UploadController@imgae');
+});

@@ -31,7 +31,7 @@ class UploadImageRequest extends FormRequest
     public function messages()
     {
         return [
-            'image.*' => '上传的图片错误',
+            'image.*' => '只允许上传图片格式',
         ];
     }
 }

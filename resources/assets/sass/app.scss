@@ -141,23 +141,6 @@ body {
     }
 }
 
-/* Article Detail */
-.article-detail {
-    // .right {
-    //     position: absolute;
-    // }
-    //
-    // .col-md-offset-1 {
-    //     margin-left: 4.33% !important;
-    // }
-    // pre {
-    //     background: rgba(54, 56, 58, 0.98);
-    //     color: #f8f8f2;
-    //     text-shadow: none;
-    //     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    //     border-radius: 2px;
-    // }
-}
 .article-comment {
     margin-top: 20px;
     h3 {
@@ -196,17 +179,35 @@ body {
     .add {
         margin-bottom: 10px;
 
+        .needlogin-div {
+            width: 100%;
+            height: 164px;
+            background-color: rgba(212, 206, 206, 0.5);
+            text-align: center;
+            display: table;
+
+            a {
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 19px;
+
+                span {
+                    margin: 0 2px;
+                    text-decoration: underline;
+                }
+            }
+            a:hover{
+                text-decoration: none;
+            }
+        }
+
         textarea {
             overflow: hidden;
             word-wrap: break-word;
-            resize: horizontal;
+            resize: vertical;
             height: 164px;
         }
         #content-reply-to {
-            display: none;
-        }
-        #add-comment-error {
-            color: red;
             display: none;
         }
     }

@@ -4,9 +4,8 @@
 @section('desc', $article->abstract)
 @section('keywords', $article->keywords)
 
-<link href="https://cdn.bootcss.com/github-markdown-css/2.10.0/github-markdown.min.css" rel="stylesheet">
-<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://cdn.bootcss.com/simplemde/1.7.1/simplemde.min.css" rel="stylesheet">
+<!-- <link href="https://cdn.bootcss.com/github-markdown-css/2.10.0/github-markdown.min.css" rel="stylesheet"> -->
+<!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
 <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
@@ -28,7 +27,7 @@
                 @endif
             </div>
             <h2>{{ $article->title }}</h2>
-            <div>
+            <div id="article-detail-content">
                 {!! $article->content !!}
             </div>
             <div class="prev-next">
@@ -84,7 +83,7 @@
                                     @if ($comment->reply_to)
                                     <span class="reply-to">{{ '@' . $reply_names[$comment->reply_to] }}</span>
                                     @endif
-                                    <span class="content-detail">{!! $comment->content !!}</span>
+                                    <span class="content-detail markdown-body">{!! $comment->content !!}</span>
                                 </div>
                             </div>
                         </li>
@@ -106,16 +105,38 @@
                         <div class="well well-sm" id="reply-to-content"></div>
                     </div>
                     <div class="alert alert-success" role="alert">
-                        😊请文明发言～～
+                        <ul>
+                            <li>支持Markdown语法</li>
+                            <li>支持拖拽和粘贴上传图片</li>
+                            <li>😊请文明发言～.～</li>
+                        </ul>
                     </div>
-                    <textarea class="form-control" id="mde-area" name="original_md" rows="5" cols="50">{{ old('original_md') }}</textarea>
+
+                    @guest
+                        <div class="alert alert-info needlogin-div" role="alert">
+                            <a href="{{ route('login') }}">请<span>登陆</span>后再进行评论！</a>
+                        </div>
+                    @else
+                        <textarea class="form-control" id="md-textarea" name="original_md" rows="5" cols="50">{{ old('original_md') }}</textarea>
+                    @endguest
+
                     <div class="checkbox">
                         <label>
                             <input type="checkbox" name="notify"> 不接收新消息通知😭
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> 提交</button>
-                    <span id="add-comment-error">⚠️必须要填写邮件地址哦～⚠️</span>
+                    <button type="submit" class="btn btn-success" @guest disabled @endguest>
+                        <i class="fa fa-send"></i> 提交
+                    </button>
+                    <hr>
+                    <div class="comment-preview">
+                        <div class="title">
+                            Preview
+                        </div>
+                        <div class="content">
+
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -124,8 +145,7 @@
 @endsection
 
 @section('footer_script')
-  <scrip src="{{ mix('js/article.js') }}"></scrip>
-  <script src="https://cdn.bootcss.com/simplemde/1.7.1/simplemde.min.js"></script>
+  <script src="{{ mix('js/detail.js') }}" type="text/javascript"></script>
   <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   <script>
     hljs.initHighlightingOnLoad();

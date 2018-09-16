@@ -60,7 +60,12 @@ return [
             'url' => env('IMG_URL'),
             'visibility' => 'public',
         ],
-
+        'alioss' => [
+            'driver' => 'oss',
+            'root' => storage_path('app/public'),
+            'url' => env('IMG_URL'),
+            'visibility' => 'public'
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
