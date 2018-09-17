@@ -11,13 +11,11 @@ class CommentController extends Controller
     public function store(Comment $comment, Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'username' => 'required|max:20',
-            'email' => 'required|email',
             'url' => 'url',
             'original_md' => 'required',
             'article_id' => 'required|exists:articles,id',
+            'reply_to' => 'required|exists:comments,id',
         ], [
-            'username.max' => '最多只允许20个字符',
             'original_md.required' => '评论内容不可为空',
             'article_id.required' => '请不要改动页面内容！',
             'article_id.exists' => '大哥，你想给哪篇文章评论呢？！',

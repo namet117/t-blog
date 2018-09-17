@@ -125,7 +125,7 @@
                             <input type="checkbox" name="notify"> 不接收新消息通知😭
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success" @guest disabled @endguest>
+                    <button type="submit" class="btn btn-success comment-send" disabled>
                         <i class="fa fa-send"></i> 提交
                     </button>
                     <hr>
@@ -133,9 +133,7 @@
                         <div class="title">
                             Preview
                         </div>
-                        <div class="content">
-
-                        </div>
+                        <div id="comment-preview-content" class="markdown-body"></div>
                     </div>
                 </form>
             </div>
