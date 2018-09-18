@@ -22,9 +22,9 @@ $(() => {
     }
   });
 
+  $('.comment-send').prop('disabled', $(this).val().length === 0);
   $textarea.on('keyup', function() {
-    let length = $(this).val().length;
-    $('.comment-send').prop('disabled', length === 0);
+    $('.comment-send').prop('disabled', $(this).val().length === 0);
   });
   $textarea.on('blur', function () {
     if ($(this).val().length > 0) {

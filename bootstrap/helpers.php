@@ -49,3 +49,8 @@ if (!function_exists('is_url')) {
         return preg_match('/^https?:\//', $url);
     }
 }
+
+function f_log($data, $append = false)
+{
+    return file_put_contents('l1.log', print_r($data, true), $append ? FILE_APPEND : 0);
+}

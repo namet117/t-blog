@@ -16,8 +16,7 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id')->comment('主键');
             $table->string('username')->nullable()->comment('用户名');
-            $table->string('site', 100)->comment('站点')->nullable();
-            $table->string('email', 100)->comment('邮箱')->nullable();
+            $table->integer('user_id')->index()->comment('用户ID');
             $table->ipAddress('ip')->nullable()->comment('IP');
             $table->unsignedInteger('reply_to')->default(0)->comment('回复评论的ID');
             $table->unsignedInteger('article_id')->index()->comment('评论的文章ID');
@@ -41,3 +40,4 @@ class CreateCommentsTable extends Migration
         Schema::dropIfExists('comments');
     }
 }
+

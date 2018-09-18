@@ -60,17 +60,17 @@
                         @foreach ($comments as $comment)
                         <li class="list-group-item media" style="margin-top:0px;" id="comment-{{ $comment->id }}" data-id="{{ $comment->id }}" data-rank="{{ $comment->rank }}">
                             <div class="avatar center pull-left">
-                                <img src="https://file.namet.xyz/users/d_2.jpg?x-oss-process=style/avatar-sm" alt="Avatar">
+                                <img src="{{$comment->user_info->avatar ?: 'https://file.namet.xyz/users/d_2.jpg?x-oss-process=style/avatar-sm'}}" alt="Avatar">
                             </div>
                             <div class="detail">
                                 <div class="profile">
                                     <div class="operate pull-right">
                                         <a class="fa fa-reply add-reply" href="#content-reply-to" title="回复"></a>
                                     </div>
-                                    <span class="username">{{ $comment->username }}</span>
+                                    <span class="username">{{ $comment->user_info->username }}</span>
                                     <span class="site-link">
-                                        @if ($comment->site)
-                                        <a href="{{ $comment->site }}" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                        @if ($comment->user_info->site)
+                                        <a href="{{ $comment->user_info->site }}" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a>
                                         @endif
                                     </span>
                                     <div class="row rank-time">
