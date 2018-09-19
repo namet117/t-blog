@@ -14,10 +14,13 @@ class ArticleController extends Controller
         $prev = $article::select($fields)->where('id', '<', $article->id)->limit(1)->orderBy('id', 'desc')->first();
 
         $comments = $article->comments;
-        foreach ($comments as &$comment) {
+        $list = [];
+        foreach ($comments as $comment) {
+            // $temp = $comment->toArray();
+            // $user = $comment->user;
             $comment->user_info = $comment->user;
+            // f_log($comment->toArray());
         }
-        f_log($comments);
         $reply_names = $comments->pluck('username', 'id')->toArray();
 
         return view('articles.show', compact('article', 'prev', 'next', 'comments', 'reply_names'));

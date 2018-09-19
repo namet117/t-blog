@@ -60,7 +60,7 @@
                         @foreach ($comments as $comment)
                         <li class="list-group-item media" style="margin-top:0px;" id="comment-{{ $comment->id }}" data-id="{{ $comment->id }}" data-rank="{{ $comment->rank }}">
                             <div class="avatar center pull-left">
-                                <img src="{{$comment->user_info->avatar ?: 'https://file.namet.xyz/users/d_2.jpg?x-oss-process=style/avatar-sm'}}" alt="Avatar">
+                                <img style="width: 50px;height: 50px;border-radius: 50%;" src="{{$comment->user_info->avatar ?: 'https://file.namet.xyz/users/d_2.jpg?x-oss-process=style/avatar-sm'}}" alt="Avatar">
                             </div>
                             <div class="detail">
                                 <div class="profile">
@@ -74,7 +74,7 @@
                                         @endif
                                     </span>
                                     <div class="row rank-time">
-                                        <span class="rank">#{{ $comment->rank }}</span>
+                                        <span class="rank">{{ $comment->rank }}楼</span>
                                         <span class="time">{{ $comment->created_at->diffForHumans() }} {{ $comment->reply_to ? ('>> #' . $comment->reply_to) : '' }}
                                         </span>
                                     </div>
