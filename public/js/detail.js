@@ -2886,9 +2886,9 @@ $(function () {
     }
   });
 
+  $('.comment-send').prop('disabled', $textarea.val().length === 0);
   $textarea.on('keyup', function () {
-    var length = $(this).val().length;
-    $('.comment-send').prop('disabled', length === 0);
+    $('.comment-send').prop('disabled', $(this).val().length === 0);
   });
   $textarea.on('blur', function () {
     if ($(this).val().length > 0) {

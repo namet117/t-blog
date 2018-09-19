@@ -15,14 +15,12 @@ class ArticleController extends Controller
 
         $comments = $article->comments;
         $list = [];
+        $replies = [];
         foreach ($comments as $comment) {
-            // $temp = $comment->toArray();
-            // $user = $comment->user;
             $comment->user_info = $comment->user;
-            // f_log($comment->toArray());
+            $replies[$comment->id] = $comment;
         }
-        $reply_names = $comments->pluck('username', 'id')->toArray();
 
-        return view('articles.show', compact('article', 'prev', 'next', 'comments', 'reply_names'));
+        return view('articles.show', compact('article', 'prev', 'next', 'comments', 'replies'));
     }
 }

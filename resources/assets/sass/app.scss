@@ -170,9 +170,10 @@ body {
                 font-weight: bold;
             }
             .reply-to {
-                color: blue;
-                text-decoration: underline;
+                color: rgba(57, 0, 255, 0.58);
+                text-decoration: none;
                 float: left;
+                margin-right: 3px;
             }
         }
     }

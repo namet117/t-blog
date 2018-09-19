@@ -75,13 +75,13 @@
                                     </span>
                                     <div class="row rank-time">
                                         <span class="rank">{{ $comment->rank }}楼</span>
-                                        <span class="time">{{ $comment->created_at->diffForHumans() }} {{ $comment->reply_to ? ('>> #' . $comment->reply_to) : '' }}
+                                        <span class="time">{{ $comment->created_at->diffForHumans() }} {{ $comment->reply_to ? ('>> ' . $replies[$comment->reply_to]->rank) . '楼' : '' }}
                                         </span>
                                     </div>
                                 </div>
                                 <div class="content">
                                     @if ($comment->reply_to)
-                                    <span class="reply-to">{{ '@' . $reply_names[$comment->reply_to] }}</span>
+                                    <span class="reply-to">{{ '@' . $replies[$comment->reply_to]->username }}</span>
                                     @endif
                                     <span class="content-detail markdown-body">{!! $comment->content !!}</span>
                                 </div>

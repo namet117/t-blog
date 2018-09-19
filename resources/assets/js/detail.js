@@ -22,7 +22,7 @@ $(() => {
     }
   });
 
-  $('.comment-send').prop('disabled', $(this).val().length === 0);
+  $('.comment-send').prop('disabled', $textarea.val().length === 0);
   $textarea.on('keyup', function() {
     $('.comment-send').prop('disabled', $(this).val().length === 0);
   });
