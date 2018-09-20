@@ -21,6 +21,13 @@ class ArticleController extends Controller
             $replies[$comment->id] = $comment;
         }
 
+        // 如果这个用户看过此文章，则不再增加
+        $key = 'has_read_' . $article->id;
+        if (!session($key)) {
+            $article->increment('view_times');
+            session([$key => 1]);
+        }
+
         return view('articles.show', compact('article', 'prev', 'next', 'comments', 'replies'));
     }
 }
