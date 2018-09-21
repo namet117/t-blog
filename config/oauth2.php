@@ -26,4 +26,10 @@ return [
         'secret' => env('OAUTH_GITHUB_SECRET'),
         'scope' => env('OAUTH_GITHUB_SCOPE'),
     ],
+    'oschina' => [
+        'appid' => env('OAUTH_OSCHINA_APPID'),
+        'redirect_uri' => create_url(env('OAUTH_OSCHINA_REDIRECT_URI')),
+        'secret' => env('OAUTH_OSCHINA_SECRET'),
+        'scope' => env('OAUTH_OSCHINA_SCOPE'),
+    ]
 ];
