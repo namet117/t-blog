@@ -150,6 +150,12 @@ body {
     }
 }
 
+.article-detail {
+    img {
+        max-height: 500px;
+    }
+}
+
 .article-comment {
     margin-top: 20px;
     h3 {
