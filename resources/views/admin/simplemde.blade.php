@@ -2,7 +2,7 @@
 
     <label for="{{$id}}" class="col-sm-2 control-label">{{$label}}</label>
 
-    <div class="col-sm-6">
+    <div class="col-sm-8">
 
         @include('admin::form.error')
 
@@ -33,15 +33,15 @@
             batchUpload(dataList, editor);
         });
 
-        simplemde.codemirror.on('paste', function (editor, e) {
-          e.preventDefault();
-            // if (!e.clipboardData && e.clipboardData.files) {
-            //     alert('浏览器不支持此操作');
-            //     return;
-            // }
-            // var dataList = e.clipboardData.items;
-            // batchUpload(dataList, editor);
-        });
+        // simplemde.codemirror.on('paste', function (editor, e) {
+        //   e.preventDefault();
+        //     if (!e.clipboardData && e.clipboardData.files) {
+        //         alert('浏览器不支持此操作');
+        //         return;
+        //     }
+        //     var dataList = e.clipboardData.items;
+        //     batchUpload(dataList, editor);
+        // });
 
         function batchUpload(dataList) {
             for (let i = 0; i < dataList.length; i++) {
