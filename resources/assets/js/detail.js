@@ -22,13 +22,15 @@ $(() => {
     }
   });
 
-  $('.comment-send').prop('disabled', $textarea.val().length === 0);
+  $('.comment-send').prop('disabled', !!$textarea.val());
   $textarea.on('keyup', function() {
-    $('.comment-send').prop('disabled', $(this).val().length === 0);
+    $('.comment-send').prop('disabled', !!$(this).val());
   });
   $textarea.on('blur', function () {
     if ($(this).val().length > 0) {
       $('#comment-preview-content').html(marked($(this).val()));
     }
   });
+
+  $('.markdown-body img').css('max-height', '450px');
 });
