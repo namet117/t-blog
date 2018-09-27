@@ -71,7 +71,7 @@
                             <time>2017.7-2018.4</time>
                         </h3>
                         <ul class="info-content">
-                            <li>认真的搬砖</li>
+                            <li>小网站</li>
                         </ul>
                     </li>
                     <li>
@@ -80,7 +80,7 @@
                             <time>2015.10-2017.4</time>
                         </h3>
                         <ul class="info-content">
-                            <li>做<mark>商城</mark></li>
+                            <li><mark>电商</mark></li>
                         </ul>
                     </li>
                 </ul>
@@ -96,7 +96,7 @@
                             <time>2017.12-2018.1</time>
                         </h3>
                         <ul class="info-content">
-                            <li>技术栈：Laravel+Redis+Vue2+iView+Bootstrap</li>
+                            <li>技术栈：Laravel+Redis+Bootstrap</li>
                             <li>
                                 <i class="glyphicon glyphicon-send" aria-hidden="true"></i>
                                 实现可将个人工作心得分享的平台
@@ -112,7 +112,7 @@
             <div class="introduction">
                 <h2><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i> 自我评价/期望</h2>
                 <hr/>
-                <p>永远都不要停滞不前。</p>
+                <p>每天码一码。</p>
             </div>
         </div>
     </div>
