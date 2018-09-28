@@ -115,11 +115,14 @@ body {
 
 /* 登陆 */
 #user-login {
-    img {
-        width: 18px;
-        height: 18px;
-        margin-right: 5px;
-        border-radius: 50%;
+    a {
+        margin-bottom: 4px;
+        img {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+            border-radius: 50%;
+        }
     }
 }
 /* Article List*/
