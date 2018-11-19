@@ -4,9 +4,7 @@
 @section('desc', $article->abstract)
 @section('keywords', $article->keywords)
 
-<!-- <link href="https://cdn.bootcss.com/github-markdown-css/2.10.0/github-markdown.min.css" rel="stylesheet"> -->
-<!-- <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> -->
-<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
     <div class="row article-detail">
@@ -144,7 +142,7 @@
 
 @section('footer_script')
   <script src="{{ mix('js/detail.js') }}" type="text/javascript"></script>
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>

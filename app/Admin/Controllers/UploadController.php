@@ -17,6 +17,6 @@ class UploadController extends Controller
     {
         $file = $request->file('image');
         $path = $file->store('/images/' . date('Ymd'), 'admin');
-        return ['url' => Storage::disk('admin')->url($path)];
+        return ['url' => Storage::disk('admin')->url($path), 'path' => $path];
     }
 }

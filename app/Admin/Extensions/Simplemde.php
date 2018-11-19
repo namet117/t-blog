@@ -15,10 +15,10 @@ class Simplemde extends Field
     protected $view = 'admin.simplemde';
 
     protected static $css = [
-        'https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.css'
+        'https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css'
     ];
 
     protected static $js = [
-        'https://cdn.bootcss.com/simplemde/1.11.2/simplemde.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js',
     ];
 }
