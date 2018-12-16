@@ -34,7 +34,6 @@
         });
 
         simplemde.codemirror.on('paste', function (editor, e) {
-          e.preventDefault();
             if (!e.clipboardData && e.clipboardData.files) {
                 alert('浏览器不支持此操作');
                 return;
