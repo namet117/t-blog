@@ -39,7 +39,7 @@ class Article extends Model
         foreach ($order as $k => $v) {
             $articles->orderBy($k, $v);
         }
-        $articles = $articles->offset($page['offset'])->limit($page['limit'])->get()
+        $articles = $articles->where('is_hidden', 0)->offset($page['offset'])->limit($page['limit'])->get()
             ->each(function($item, $key) use($tags) {
                 $tag_ids = explode(',', trim($item->tag_ids, ','));
                 $this_tags = $tag_ids ? array_only($tags, $tag_ids) : [];
@@ -64,7 +64,7 @@ class Article extends Model
             $article->$function($v);
         }
 
-        return $article->count();
+        return $article->where('is_hidden', 0)->count();
     }
 
     // 获取关联评论
