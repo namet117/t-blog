@@ -27,6 +27,7 @@ class CreateArticlesTable extends Migration
             $table->integer('praise_times')->default(0)->comment('被赞次数');
             $table->integer('comment_times')->default(0)->comment('评论次数');
             $table->tinyInteger('is_top')->default(0)->comment('是否置顶');
+            $table->tinyInteger('is_hidden')->default(0)->comment('是否隐藏');
             $table->timestamps();
             $table->softDeletes();
         });

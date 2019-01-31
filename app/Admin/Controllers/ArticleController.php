@@ -24,10 +24,10 @@ class ArticleController extends Controller
      */
     public function index(Content $content)
     {
-        return $content
-            ->header('文章管理')
-            ->description('管理文章内容')
-            ->body($this->grid());
+        $content->header('文章管理');
+        $content->description('管理文章内容');
+        $content->body($this->grid());
+        return $content;
     }
 
     /**
@@ -101,6 +101,7 @@ class ArticleController extends Controller
         $grid->praise_times('赞数')->sortable();
         $grid->comment_times('评论数')->sortable();
         $grid->is_top('是否置顶')->sortable();
+        $grid->is_hidden('是否隐藏')->sortable();
         $grid->updated_at('最后更新时间')->sortable();
         // 设置初始排序条件
         $grid->model()->orderBy('id', 'desc');
@@ -132,6 +133,7 @@ class ArticleController extends Controller
         $show->praise_times('赞次数');
         $show->comment_times('评论次数');
         $show->is_top('置顶');
+        $show->is_hidden('隐藏');
         $show->created_at('创建时间');
         $show->updated_at('修改时间');
         $show->deleted_at('删除时间');
@@ -160,6 +162,7 @@ class ArticleController extends Controller
         $form->number('praise_times', '赞次数')->min(0);
         $form->number('comment_times', '评论次数')->min(0);
         $form->switch('is_top', '置顶');
+        $form->switch('is_hidden', '隐藏');
         $form->url('first_img', '首图');
         $form->simplemde('original_md', 'MarkDown')->rules('required', ['required' => '文章内容必须填写！']);
 
