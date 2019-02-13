@@ -22,7 +22,8 @@ $(() => {
     }
   });
 
-  $('.comment-send').prop('disabled', !!$textarea.val());
+  $('.comment-send').prop('disabled', !$textarea.val());
+  
   $textarea.on('keyup', function() {
     $('.comment-send').prop('disabled', !!$(this).val());
   });
