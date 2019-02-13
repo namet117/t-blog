@@ -25,7 +25,7 @@ $(() => {
   $('.comment-send').prop('disabled', !$textarea.val());
   
   $textarea.on('keyup', function() {
-    $('.comment-send').prop('disabled', !!$(this).val());
+    $('.comment-send').prop('disabled', !$(this).val());
   });
   $textarea.on('blur', function () {
     if ($(this).val().length > 0) {

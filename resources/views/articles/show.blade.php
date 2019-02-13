@@ -123,7 +123,7 @@
                             <input type="checkbox" name="notify"> 不接收新消息通知😭
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-success comment-send" disabled>
+                    <button type="submit" class="btn btn-success comment-send">
                         <i class="fa fa-send"></i> 提交
                     </button>
                     <hr>
