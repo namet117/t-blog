@@ -71,7 +71,7 @@
                             <time>2017.7-2018.4</time>
                         </h3>
                         <ul class="info-content">
-                            <li>小网站</li>
+                            <li>电商</li>
                         </ul>
                     </li>
                     <li>
