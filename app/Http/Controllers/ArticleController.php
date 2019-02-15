@@ -10,8 +10,8 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $fields = ['id', 'title', 'slug'];
-        $next = $article::select($fields)->where('id', '>', $article->id)->limit(1)->orderBy('id', 'asc')->first();
-        $prev = $article::select($fields)->where('id', '<', $article->id)->limit(1)->orderBy('id', 'desc')->first();
+        $next = $article::select($fields)->where('is_hidden', 0)->where('id', '>', $article->id)->limit(1)->orderBy('id', 'asc')->first();
+        $prev = $article::select($fields)->where('is_hidden', 0)->where('id', '<', $article->id)->limit(1)->orderBy('id', 'desc')->first();
 
         $comments = $article->comments;
         $list = [];
