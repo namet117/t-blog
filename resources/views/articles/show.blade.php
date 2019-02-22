@@ -9,7 +9,8 @@
 @section('content')
 <div class="container">
     <div class="row article-detail">
-        <div class="col-md-10 col-xs-12 markdown-body left card">
+        <div class="col-md-10 col-xs-12 left">
+        <div class="row markdown-body card">
             <div class="prev-next">
                 @if ($prev)
                 <a class="prev" title="上一篇" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
@@ -45,10 +46,6 @@
                 @endif
             </div>
         </div>
-        <div class="col-md-2 hidden-xs card">
-            @include('articles._right')
-        </div>
-    </div>
     <!-- 文章评论 -->
     <div class="row article-comment card">
         <div class="col-md-10 col-xs-12 list">
@@ -140,7 +137,11 @@
                 </form>
             </div>
         </div>
+        </div>
     </div>
+        <div class="col-md-2 hidden-xs card">
+            @include('articles._right')
+        </div>
 </div>
 @endsection
 

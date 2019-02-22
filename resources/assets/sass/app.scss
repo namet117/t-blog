@@ -157,7 +157,10 @@ body {
     img {
         max-height: 500px;
         display: block;
-        margin: 0 auto;
+        margin: 5px auto;
+    }
+    .markdown-body {
+        padding: 10px 15px;
     }
 }
 
