@@ -3,6 +3,8 @@ import 'github-markdown-css/github-markdown.css';
 import 'font-awesome/css/font-awesome.min.css';
 import 'inline-attachment/src/inline-attachment';
 import 'inline-attachment/src/jquery.inline-attachment';
+// require('jquery-ui');
+// require('jquery.tocify');
 
 $(() => {
   // 文章内的链接都统一打开新窗口
@@ -34,4 +36,20 @@ $(() => {
   });
 
   $('.markdown-body img').css('max-height', '450px');
+
+  // 如果有代码高亮，则开启
+  if (typeof hljs === 'object') {
+    hljs.initHighlightingOnLoad();
+  }
+
+  // 如果有tocify，则开启
+  if ($('#chapter').length > 0) {
+    $('#chapter').tocify({
+      context: '#article-detail-content',
+      selectors: 'h3,h4',
+      scrollHistory: true,
+      scrollTo: 66,
+      extendPage: false,
+    });
+  }
 });

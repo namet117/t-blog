@@ -18,11 +18,15 @@
         "font-awesome": "^4.7.0",
         "github-markdown-css": "^2.10.0",
         "inline-attachment": "^2.0.3",
-        "jquery": "^3.2",
+        "jquery": "^1.12.4",
+        "jquery-ui": "^1.12.1",
         "js-cookie": "^2.2.0",
         "laravel-mix": "^2.0",
         "marked": "^0.5.0",
         "normalize.css": "^8.0.0",
         "nprogress": "^0.2.0"
+    },
+    "dependencies": {
+        "jquery.tocify": "^1.9.1"
     }
 }

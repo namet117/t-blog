@@ -4,11 +4,12 @@
 @section('desc', $article->abstract)
 @section('keywords', $article->keywords)
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/stylesheets/jquery.tocify.min.css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/default.min.css" rel="stylesheet">
 @section('content')
 <div class="container">
     <div class="row article-detail">
-        <div class="col-xs-12 markdown-body left card">
+        <div class="col-md-10 col-xs-12 markdown-body left card">
             <div class="prev-next">
                 @if ($prev)
                 <a class="prev" title="上一篇" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
@@ -24,7 +25,7 @@
                 </a>
                 @endif
             </div>
-            <h2>{{ $article->title }}</h2>
+            <h1>{{ $article->title }}</h1>
             <div id="article-detail-content">
                 {!! $article->content !!}
             </div>
@@ -44,10 +45,13 @@
                 @endif
             </div>
         </div>
+        <div class="col-md-2 hidden-xs card">
+            @include('articles._right')
+        </div>
     </div>
     <!-- 文章评论 -->
     <div class="row article-comment card">
-        <div class="col-xs-12 list">
+        <div class="col-md-10 col-xs-12 list">
             <div class="comments panel panel-default list-panel comments-index" id="comments">
                 <div class="panel-heading">
                     <h3><i class="fa fa-comments"></i> 文章评论 ({{ $article->comment_times }})</h3>
@@ -141,9 +145,8 @@
 @endsection
 
 @section('footer_script')
-  <script src="{{ mix('js/detail.js') }}" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+    <script src="{{ mix('js/detail.js') }}" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js"></script>
 @endsection
