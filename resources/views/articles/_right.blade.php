@@ -1,1 +1,1 @@
-<div class="chapter" id="chapter"></div>
+<div class="chapter card" id="chapter"></div>
