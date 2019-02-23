@@ -50,7 +50,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-7 col-md-offset-1 col-sm-12 side right">
+        <div class="col-md-7 col-sm-12 side right">
             <div class="education">
                 <h2><i class="glyphicon glyphicon-education" aria-hidden="true"></i> 教育经历</h2>
                 <hr/>
