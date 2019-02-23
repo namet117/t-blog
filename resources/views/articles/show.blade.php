@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row article-detail">
         <div class="col-md-9 col-xs-12 left">
-        <div class="row markdown-body card">
+        <div class="row markdown-body detail card">
             <div class="prev-next">
                 @if ($prev)
                 <a class="prev" title="上一篇" href="{{ route('article.show_detail', [$prev->id, $prev->slug]) }}">
@@ -139,7 +139,7 @@
             </div>
             </div>
         </div>
-        <div class="col-md-2 hidden-xs">
+        <div class="col-md-2 hidden-xs right">
             @include('articles._right')
         </div>
     </div>

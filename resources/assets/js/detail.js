@@ -43,12 +43,12 @@ $(() => {
   }
 
   // 如果有tocify，则开启
-  if ($('#chapter').length > 0) {
+  if ($('#chapter').length > 0 && typeof $().tocify === 'function') {
     $('#chapter').tocify({
       context: '#article-detail-content',
       selectors: 'h3,h4',
       scrollHistory: true,
-      scrollTo: 66,
+      scrollTo: 88,
       extendPage: false,
     });
   }

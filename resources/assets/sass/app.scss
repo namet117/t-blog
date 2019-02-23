@@ -159,8 +159,29 @@ body {
         display: block;
         margin: 5px auto;
     }
-    .markdown-body {
+    .detail {
         padding: 10px 15px;
+    }
+
+    .right {
+        .tocify {
+            margin-left: 10px;
+            width: 220px !important;
+            a {
+                color: #666;
+            }
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .tocify-item.active {
+                background-color: #eff1f1;
+
+                a {
+                    color: #333;
+                    font-weight: 800;
+                }
+            }
+        }
     }
 }
 
