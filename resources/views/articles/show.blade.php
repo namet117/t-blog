@@ -139,7 +139,7 @@
             </div>
             </div>
         </div>
-        <div class="col-md-2 hidden-xs right">
+        <div class="col-md-2 hidden-xs hidden-sm right">
             @include('articles._right')
         </div>
     </div>
