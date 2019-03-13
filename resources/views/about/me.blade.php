@@ -40,17 +40,17 @@
                 <h2><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> 技能点</h2>
                 <hr/>
                 <ul>
-                    <li><label>HTML/CSS</label><progress value="60" max="100"></progress></li>
-                    <li><label>JavaScript</label><progress value="65" max="100"></progress></li>
-                    <li><label>PHP</label><progress value="80" max="100"></progress></li>
-                    <li><label>Redis</label><progress value="70" max="100"></progress></li>
-                    <li><label>MySQL</label><progress value="60" max="100"></progress></li>
+                    <li><label>HTML/CSS</label><progress value="40" max="100"></progress></li>
+                    <li><label>JavaScript</label><progress value="40" max="100"></progress></li>
+                    <li><label>PHP</label><progress value="50" max="100"></progress></li>
+                    <li><label>Redis</label><progress value="50" max="100"></progress></li>
+                    <li><label>MySQL</label><progress value="40" max="100"></progress></li>
                     <li><label>Linux</label><progress value="30" max="100"></progress></li>
                     <li><label>Docker</label><progress value="30" max="100"></progress></li>
                 </ul>
             </div>
         </div>
-        <div class="col-md-7 col-sm-12 side right">
+        <div class="col-md-offset-1 col-md-7 col-sm-12 side right">
             <div class="education">
                 <h2><i class="glyphicon glyphicon-education" aria-hidden="true"></i> 教育经历</h2>
                 <hr/>
