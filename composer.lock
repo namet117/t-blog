@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "25143360575c95179f0d604d200ab9d3",
-    "content-hash": "f9a063a935e12002d80d62ad5da722ef",
+    "hash": "426354a447f8df6e356a192b98a392de",
+    "content-hash": "19088a85aa4106a763571525cabb8b66",
     "packages": [
         {
             "name": "aliyuncs/oss-sdk-php",
@@ -1128,6 +1128,67 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29 18:48:56"
+        },
+        {
+            "name": "laravel-admin-ext/log-viewer",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-admin-extensions/log-viewer.git",
+                "reference": "19c78d7b81b0f062d4a1a61fb0c0310305b097c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-admin-extensions/log-viewer/zipball/19c78d7b81b0f062d4a1a61fb0c0310305b097c2",
+                "reference": "19c78d7b81b0f062d4a1a61fb0c0310305b097c2",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "encore/laravel-admin": "~1.5",
+                "laravel/framework": "~5.5",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "laravel/laravel": "~5.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Encore\\Admin\\LogViewer\\LogViewerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Encore\\Admin\\LogViewer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "z-song",
+                    "email": "zosong@126.com"
+                }
+            ],
+            "description": "Log viewer for laravel",
+            "homepage": "https://github.com/laravel-admin-extensions/log-viewer",
+            "keywords": [
+                "Viewer",
+                "laravel-admin",
+                "log"
+            ],
+            "time": "2018-04-25 06:14:03"
         },
         {
             "name": "laravel/framework",
