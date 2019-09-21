@@ -17,13 +17,14 @@
 <div id="back-to-top">
     <i class="glyphicon glyphicon-triangle-top"></i>
 </div>
+
 <script>
 var _hmt = _hmt || [];
 (function() {
-      var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?285daa10c97c3380a0262ea7fe0c9b7b";
-        var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?4ef5c6918597ff60d781f4cd4a970e39";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
 })();
 </script>
 
