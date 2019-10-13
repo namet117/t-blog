@@ -113,7 +113,7 @@
 
                         @guest
                             <div class="alert alert-info needlogin-div" role="alert">
-                                <a href="{{ route('login') }}">请<span>登陆</span>后再进行评论！</a>
+                                <a href="{{ route('login') }}">请<span>登录</span>后再进行评论！</a>
                             </div>
                         @else
                             <textarea class="form-control" id="md-textarea" name="original_md" rows="5" cols="50">{{ old('original_md') }}</textarea>
