@@ -17,5 +17,8 @@ Route::group([
     $router->resource('content/tags', 'TagController');
     $router->resource('content/comments', 'CommentController');
 
+    $router->resource('out/friendLink', 'FriendLinkController');
+
     $router->resource('users/users', 'UserController');
 });
+

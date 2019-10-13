@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Tag;
-use App\Message;
-use App\Article;
+use App\{Tag, Message, Article, FriendLink};
 
 class HomeController extends Controller
 {
@@ -26,13 +24,14 @@ class HomeController extends Controller
         $data = $article->getArticleListWithPage($where, [], [], $tags_name, $currentPage);
         $articles = $data['list'];
 
+        $links = FriendLink::valid()->withOrder()->get();
+
         $page = $data['pagination'];
-        return view('home.index', compact('tags', 'messages', 'articles', 'page'));
+        return view('home.index', compact('tags', 'messages', 'articles', 'page', 'links'));
     }
 
     public function about()
     {
-        \Auth::loginUsingId(2, true);
         return view('about.me');
     }
 }
