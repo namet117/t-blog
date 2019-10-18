@@ -29,6 +29,7 @@ var _hmt = _hmt || [];
 @endif
 
 @if (config('tblog.cnzz_appid'))
-<script type="text/javascript" src="https://s22.cnzz.com/z_stat.php?id={{ config('tblog.cnzz_appid') }}&web_id={{ config('tblog.cnzz_appid') }}"></script>
+<!-- <script type="text/javascript" src="https://s22.cnzz.com/z_stat.php?id={{ config('tblog.cnzz_appid') }}&web_id={{ config('tblog.cnzz_appid') }}"></script> -->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan style=\"display:none;\" id='cnzz_stat_icon_{{ config('tblog.cnzz_appid') }}'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D{{ config('tblog.cnzz_appid') }}' type='text/javascript'%3E%3C/script%3E"));</script>
 @endif
 
