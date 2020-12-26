@@ -11,10 +11,3 @@ vendor/
 .DS_Store
 *.lock
 .phpunit*
-*.map
-.vscode/
-.history/
-/.vagrant
-Homestead.json
-Homestead.yaml
-nohup.out
