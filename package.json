@@ -13,7 +13,7 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-  },,
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/namet117/t-blog.git"
@@ -27,5 +27,15 @@
   "bugs": {
     "url": "https://github.com/namet117/t-blog/issues"
   },
-  "homepage": "https://github.com/namet117/t-blog#readme"
+  "homepage": "https://github.com/namet117/t-blog#readme",
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "bootstrap-sass": "^3.4.1",
+    "cross-env": "^7.0.3",
+    "font-awesome": "^4.7.0",
+    "github-markdown-css": "^4.0.0",
+    "laravel-mix": "^6.0.6",
+    "marked": "^1.2.7",
+    "normalize.css": "^8.0.1"
+  }
 }
