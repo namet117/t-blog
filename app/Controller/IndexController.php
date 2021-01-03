@@ -1,20 +1,33 @@
 <?php
 
 declare(strict_types=1);
-
-
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 namespace App\Controller;
+
+use App\Model\FriendLink;
+use App\Model\Message;
+use App\Model\Tag;
+use Hyperf\View\RenderInterface;
 
 class IndexController extends AbstractController
 {
-    public function index()
+    public function index(RenderInterface $render)
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
+        $tags = Tag::all();
+        $messages = Message::latest()->limit(5)->get();
 
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+        // $page = $this->request-
+
+        $articles = [];
+        $links = FriendLink::valid()->withOrder()->get();
+
+        return $render->render('home/index', compact('tags', 'messages', 'links', 'articles'));
     }
 }

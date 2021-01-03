@@ -9,7 +9,7 @@
         @endphp
 
         @foreach ($tags as $tag)
-            <span class="label label-{{ array_random($color) }} tag_names">
+            <span class="label label-{{ $color[mt_rand(0, 5)] }} tag_names">
                 <span class="tag_name">
                     {{ $tag->tag_name }}
                 </span>
