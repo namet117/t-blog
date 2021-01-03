@@ -36,10 +36,21 @@ return [
         'max_request' => 100000,
         'socket_buffer_size' => 2 * 1024 * 1024,
         'buffer_output_size' => 2 * 1024 * 1024,
+
+        // Asserts
+        'document_root' => BASE_PATH . '/public',
+        'enable_static_handler' => true,
+
+        // Task
+        'task_worker_num' => 4,
     ],
     'callbacks' => [
         Event::ON_WORKER_START => [Hyperf\Framework\Bootstrap\WorkerStartCallback::class, 'onWorkerStart'],
         Event::ON_PIPE_MESSAGE => [Hyperf\Framework\Bootstrap\PipeMessageCallback::class, 'onPipeMessage'],
         Event::ON_WORKER_EXIT => [Hyperf\Framework\Bootstrap\WorkerExitCallback::class, 'onWorkerExit'],
+
+        // Task callbacks
+        Event::ON_TASK => [Hyperf\Framework\Bootstrap\TaskCallback::class, 'onTask'],
+        Event::ON_FINISH => [Hyperf\Framework\Bootstrap\FinishCallback::class, 'onFinish'],
     ],
 ];
