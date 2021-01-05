@@ -1,9 +1,11 @@
-let mix = require('laravel-mix');
+const mix = require('laravel-mix');
+const path = require('path');
 
 // 停用通知
 // mix.disableNotifications();
 // 编译js&css
 mix
-  .js('resources/assets/js/app.js', 'public/js/app.js')
+  .setPublicPath(path.normalize('/public'))
+  .js('resources/assets/js/app.js', 'js')
 //  .js('resources/assets/js/detail.js', 'public/js')
-  .sass('resources/assets/sass/app.scss', 'public/css/app.css');
+  .sass('resources/assets/sass/app.scss', 'css');

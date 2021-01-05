@@ -28,6 +28,6 @@ class IndexController extends AbstractController
         $articles = [];
         $links = FriendLink::valid()->withOrder()->get();
 
-        return $render->render('home/index', compact('tags', 'messages', 'links', 'articles'));
+        return $render->render('home.index', compact('tags', 'messages', 'links', 'articles'));
     }
 }
