@@ -5,7 +5,8 @@ const path = require('path');
 // mix.disableNotifications();
 // 编译js&css
 mix
-  .setPublicPath(path.normalize('/public'))
+  .setPublicPath(path.normalize('public'))
   .js('resources/assets/js/app.js', 'js')
 //  .js('resources/assets/js/detail.js', 'public/js')
-  .sass('resources/assets/sass/app.scss', 'css');
+  .sass('resources/assets/sass/app.scss', 'css')
+  .version();

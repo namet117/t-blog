@@ -36,12 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,74 +79,18 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
 /******/
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/******/ ({
 
-__webpack_require__(1);
-module.exports = __webpack_require__(3);
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-try {
-  window.$ = window.jQuery = __webpack_require__(2);
-
-  //  require('bootstrap-sass');
-} catch (e) {}
-
-//$('.tag_name').click(function () {
-//  let tag = $.trim($(this).text());
-//
-//  location.href = `/tag/${tag}`;
-//});
-//
-// 滚动监听
-var $backTop = $('#back-to-top');
-$(window).scroll(function () {
-  if ($(window).scrollTop() >= 50) {
-    $backTop.fadeIn();
-  } else {
-    $backTop.fadeOut();
-  }
-});
-//// 回到顶部
-//$backTop.click(function(){
-//  $("html,body").animate({scrollTop:0}, 500);
-//});
-//// 评论回复
-//if ($('.add-reply').length) {
-//  $('.add-reply').on('click', function (event) {
-//    event.preventDefault();
-//    let reply_to_rank = $(this).closest('li').data('rank');
-//    let reply_to_id= $(this).closest('li').data('id');
-//    $('#reply-to-id').val(reply_to_id);
-//    $('#reply-to-id-show').html(reply_to_rank);
-//    let $closest_detail = $(this).closest('.detail');
-//    $('#reply-to-username').html($closest_detail.find('.username').eq(0).text());
-//    $('#reply-to-content').html($closest_detail.find('.content-detail').eq(0).html());
-//
-//    $('#content-reply-to').show(2);
-//    $('#username').focus();
-//  });
-//  $('#cancel-reply').on('click', function (event) {
-//    event.preventDefault();
-//    $('#content-reply-to').hide(2);
-//    $('#reply-to-id').val(0);
-//  });
-//}
-
-/***/ }),
-/* 2 */
+/***/ "./node_modules/jquery/dist/jquery.js":
+/*!********************************************!*\
+  !*** ./node_modules/jquery/dist/jquery.js ***!
+  \********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -146,7 +110,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 	"use strict";
 
-	if ( typeof module === "object" && typeof module.exports === "object" ) {
+	if (  true && typeof module.exports === "object" ) {
 
 		// For CommonJS and CommonJS-like environments where a proper `window`
 		// is present, execute the factory and get jQuery.
@@ -11005,10 +10969,82 @@ return jQuery;
 
 
 /***/ }),
-/* 3 */
+
+/***/ "./resources/assets/js/app.js":
+/*!************************************!*\
+  !*** ./resources/assets/js/app.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+try {
+  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"); //  require('bootstrap-sass');
+} catch (e) {} //$('.tag_name').click(function () {
+//  let tag = $.trim($(this).text());
+//
+//  location.href = `/tag/${tag}`;
+//});
+//
+// 滚动监听
+
+
+var $backTop = $('#back-to-top');
+$(window).scroll(function () {
+  if ($(window).scrollTop() >= 50) {
+    $backTop.fadeIn();
+  } else {
+    $backTop.fadeOut();
+  }
+}); //// 回到顶部
+//$backTop.click(function(){
+//  $("html,body").animate({scrollTop:0}, 500);
+//});
+//// 评论回复
+//if ($('.add-reply').length) {
+//  $('.add-reply').on('click', function (event) {
+//    event.preventDefault();
+//    let reply_to_rank = $(this).closest('li').data('rank');
+//    let reply_to_id= $(this).closest('li').data('id');
+//    $('#reply-to-id').val(reply_to_id);
+//    $('#reply-to-id-show').html(reply_to_rank);
+//    let $closest_detail = $(this).closest('.detail');
+//    $('#reply-to-username').html($closest_detail.find('.username').eq(0).text());
+//    $('#reply-to-content').html($closest_detail.find('.content-detail').eq(0).html());
+//
+//    $('#content-reply-to').show(2);
+//    $('#username').focus();
+//  });
+//  $('#cancel-reply').on('click', function (event) {
+//    event.preventDefault();
+//    $('#content-reply-to').hide(2);
+//    $('#reply-to-id').val(0);
+//  });
+//}
+
+/***/ }),
+
+/***/ "./resources/assets/sass/app.scss":
+/*!****************************************!*\
+  !*** ./resources/assets/sass/app.scss ***!
+  \****************************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
+/***/ }),
+
+/***/ 0:
+/*!***************************************************************************!*\
+  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /Users/namet/Code/t-blog/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/namet/Code/t-blog/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+
+
 /***/ })
-/******/ ]);
+
+/******/ });

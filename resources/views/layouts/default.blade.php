@@ -7,7 +7,7 @@
         <meta name="keywords" content="@yield('keywords', 'blog'),{{ config('tblog.author') }},php">
         <meta name="description" content="@yield('desc', '') - {{ config('tblog.author') }}的技术博客">
         <title>@yield('title', 'BLOG') - {{ config('app_name') }}</title>
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
     <body>
         <!-- 头部 -->
@@ -17,6 +17,6 @@
         <!-- 页脚 -->
         @include('layouts._footer')
     </body>
-    <script src="js/app.js" type="text/javascript"></script>
+    <script src="{{ mix('/js/app.js') }}" type="text/javascript"></script>
     @yield('footer_script', '')
 </html>
