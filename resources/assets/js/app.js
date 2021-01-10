@@ -1,7 +1,7 @@
 try {
   window.$ = window.jQuery = require('jquery');
 
-//  require('bootstrap-sass');
+  require('bootstrap');
 } catch (e) {}
 
 //$('.tag_name').click(function () {
@@ -21,9 +21,9 @@ $(window).scroll(function () {
   }
 });
 //// 回到顶部
-//$backTop.click(function(){
-//  $("html,body").animate({scrollTop:0}, 500);
-//});
+$backTop.click(function(){
+  $("html,body").animate({scrollTop:0}, 500);
+});
 //// 评论回复
 //if ($('.add-reply').length) {
 //  $('.add-reply').on('click', function (event) {

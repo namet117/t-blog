@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -9,7 +9,7 @@
         <title>@yield('title', 'BLOG') - {{ config('app_name') }}</title>
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
-    <body>
+    <body class="container">
         <!-- 头部 -->
         @include('layouts._header')
         <!-- 正文 -->
