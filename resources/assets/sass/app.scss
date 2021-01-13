@@ -2,3 +2,16 @@
 //@import "variables";
 
 @import "~bootstrap/scss/bootstrap";
+
+.t-header {
+  height: 50px;
+  position: fixed;
+  top: 0;
+}
+
+.t-content {
+  margin-top: 50px;
+  padding-top: 5px;
+}
+.t {
+}

@@ -9,11 +9,13 @@
         <title>@yield('title', 'BLOG') - {{ config('app_name') }}</title>
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     </head>
-    <body class="container">
+    <body>
         <!-- 头部 -->
         @include('layouts._header')
-        <!-- 正文 -->
-        @yield('content')
+        <div class="t-content">
+          <!-- 正文 -->
+          @yield('content')
+        </div>
         <!-- 页脚 -->
         @include('layouts._footer')
     </body>
