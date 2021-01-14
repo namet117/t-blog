@@ -1,6 +1,5 @@
 try {
   window.$ = window.jQuery = require('jquery');
-
   require('bootstrap');
 } catch (e) {}
 
@@ -20,7 +19,7 @@ $(window).scroll(function () {
     $backTop.fadeOut();
   }
 });
-//// 回到顶部
+// 回到顶部
 $backTop.click(function(){
   $("html,body").animate({scrollTop:0}, 500);
 });

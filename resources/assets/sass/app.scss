@@ -2,16 +2,52 @@
 //@import "variables";
 
 @import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+a:focus, input:focus {
+  outline-style: none;
+  -moz-outline-style: none;
+}
 
 .t-header {
-  height: 50px;
-  position: fixed;
-  top: 0;
+  z-index: 1;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar-nav.dropdown {
+    text-align: center;
+  }
+}
+
+.t-footer {
+  position: absolute;
+  bottom: 0;
+
+  .container {
+    p {
+      margin: 10px 0;
+      color: #c1c1c1;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+#back-to-top {
+  bottom: 20%;
+  right: 10%;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
 }
 
 .t-content {
-  margin-top: 50px;
+  margin-top: 60px;
   padding-top: 5px;
-}
-.t {
 }
