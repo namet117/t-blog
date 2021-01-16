@@ -23,7 +23,8 @@ class IndexController extends AbstractController
         $tags = Tag::all();
         $messages = Message::latest()->limit(5)->get();
 
-        // $page = $this->request
+        $page = max(1, intval($this->request->input('page', 1)));
+        $keyword = $this->request->input('keyword');
 
         $articles = [];
         $links = FriendLink::valid()->withOrder()->get();

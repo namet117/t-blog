@@ -21,7 +21,7 @@ Router::get('/tag/{tag_name}', 'App\Controller\IndexController@index');
 Router::get('/article/{article}/{slug?}', 'App\Controller\ArticleController@show');
 
 // 个人简介
-Router::get('/about', 'App\Controller\IndexController@about');
+Router::get('/about', 'App\Controller\UserController@about');
 
 // 账号相关
 Router::get('login', 'App\Controller\AuthController@index');

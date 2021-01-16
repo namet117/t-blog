@@ -22,15 +22,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto d-flex align-items-center">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="/about">About</a>
         </li>
         <li class="nav-item d-none d-md-block">
-          <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+          <form class="form-inline my-2 my-lg-0" action="" method="get">
             <div class="input-group input-group-sm">
-              <input type="search" class="form-control">
+              <input type="search" class="form-control" name="keyword">
               <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit"><i class="bi-search"></i></button>
               </div>
