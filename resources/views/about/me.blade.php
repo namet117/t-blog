@@ -7,7 +7,7 @@
         <div class="col-md-3 col-md-offset-1 col-sm-12 side left">
             <div class="me">
                 <div class="portrait center">
-                    <img src="https://file.namet.xyz/images/avatar.jpg?x-oss-process=style/avatar-round">
+                    <img src="/images/avatar.jpg">
                 </div>
 
                 <h2 class="name center">nameT</h2>

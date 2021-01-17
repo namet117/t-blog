@@ -1,31 +1,30 @@
-<div class="shadow rounded border border-light card">
-  <div class="card-body">
-    <div class="card-title">
-      标签
-      <hr>
-    </div>
-    <div class="panel-body tags">
+<div class="t-card tags">
+  <div class="t-card-title">
+    标签
+  </div>
+  <div class="t-card-body">
+    @php
+      $color = ['secondary', 'primary', 'success', 'info', 'danger', 'warning', 'dark'];
+    @endphp
 
-      @php
-        $color = ['default', 'primary', 'success', 'info', 'danger', 'warning'];
-      @endphp
-
-      @foreach ($tags as $tag)
-        <span class="label label-{{ $color[mt_rand(0, 5)] }} tag_names">
-                <span class="tag_name">
-                    {{ $tag->tag_name }}
-                </span>
-                ({{ $tag->article_num }})
-            </span>
-      @endforeach
-    </div>
-
+    @foreach ($tags as $tag)
+      <a class="badge badge-{{ $color[mt_rand(0, 6)] }}" href="?keyword={{ $tag->tag_name }}">
+                <span class="tag-name">{{ $tag->tag_name }}</span>({{ $tag->article_num }})
+            </a>
+    @endforeach
   </div>
 </div>
-<div class="shadow rounded">
-  {{-- <div class="panel panel-default card">
+
+<div class="t-card messages">
+  <div class="t-card-title">
+    留言区
+  </div>
+  <div class="t-card-body">
+
+  </div>
+   <div class="panel panel-default card">
       <div class="panel-heading">
-          留言区
+
       </div>
       <div class="panel-body message">
           <dl>
@@ -40,13 +39,16 @@
       <div class="panel-footer">
           <a href="javascript:void(0);">查看更多</a>
       </div>
-  </div> --}}
-  {{--<div class="panel-heading">--}}
-  {{--  友情链接--}}
-  {{--</div>--}}
-  {{--<div class="panel-body friend-links">--}}
-  {{--  @foreach($links as $link)--}}
-  {{--    <a href="{{ $link->link }}" target="_blank">{{ $link->name }}</a>--}}
-  {{--  @endforeach--}}
-  {{--</div>--}}
+  </div>
+</div>
+
+<div class="t-card friend-links">
+  <div class="t-card-title">
+    友情链接
+  </div>
+  <div class="t-card-body clearfix">
+    @foreach($links as $link)
+      <a href="{{ $link->link }}" target="_blank">{{ $link->name }}</a>
+    @endforeach
+  </div>
 </div>

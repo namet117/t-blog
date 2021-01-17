@@ -8,7 +8,7 @@
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4 t-home-right">
         @include('home._right')
       </div>
     </div>
