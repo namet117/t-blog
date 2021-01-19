@@ -15,11 +15,14 @@ a:focus, input:focus {
   box-sizing: border-box;
 
   &-title {
-    padding: 15px 15px;
+    padding: 15px;
     border-bottom: 1px solid #d3e0e9;
   }
   &-body {
-    padding: 15px 15px;
+    padding: 15px;
+  }
+  &-footer {
+    padding: 15px;
   }
 }
 

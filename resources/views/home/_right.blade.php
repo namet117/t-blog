@@ -20,25 +20,15 @@
     留言区
   </div>
   <div class="t-card-body">
-
+    @foreach($messages as $message)
+      <span class="one-row">
+        <dt>{{ $message->nickname }}({{ $message->ip_location }}) : <span class="pull-right time">{{ $message->created_at }}</span></dt>
+        <dd>{{ $message->content }}</dd>
+      </span>
+    @endforeach
   </div>
-   <div class="panel panel-default card">
-      <div class="panel-heading">
-
-      </div>
-      <div class="panel-body message">
-          <dl>
-              @foreach($messages as $message)
-              <span class="one-row">
-                  <dt>{{ $message->nickname }}({{ $message->ip_location }}) : <span class="pull-right time">{{ $message->created_at }}</span></dt>
-                  <dd>{{ $message->content }}</dd>
-              </span>
-              @endforeach
-          </dl>
-      </div>
-      <div class="panel-footer">
-          <a href="javascript:void(0);">查看更多</a>
-      </div>
+  <div class="t-card-footer">
+    <a href="javascript:void(0);">查看更多</a>
   </div>
 </div>
 
