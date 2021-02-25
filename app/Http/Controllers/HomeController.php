@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Tag, Message, Article, FriendLink};
+use App\Models\{Tag, Message, Article, FriendLink};
 
 class HomeController extends Controller
 {

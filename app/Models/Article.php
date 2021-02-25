@@ -1,9 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Arr;
 
 class Article extends Model
 {
@@ -39,10 +40,11 @@ class Article extends Model
         foreach ($order as $k => $v) {
             $articles->orderBy($k, $v);
         }
+
         $articles = $articles->where('is_hidden', 0)->offset($page['offset'])->limit($page['limit'])->get()
             ->each(function($item, $key) use($tags) {
                 $tag_ids = explode(',', trim($item->tag_ids, ','));
-                $this_tags = $tag_ids ? array_only($tags, $tag_ids) : [];
+                $this_tags = $tag_ids ? Arr::only($tags, $tag_ids) : [];
                 $item->tags = $this_tags;
                 $item->tag_array = $tag_ids;
             });
@@ -112,7 +114,7 @@ class Article extends Model
         if ($this->tag_ids) {
             $tags = Tag::all()->pluck('tag_name', 'id')->toArray();
             $tag_ids = explode(',', trim($this->tag_ids, ','));
-            $this_tags = $tag_ids ? array_only($tags, $tag_ids) : [];
+            $this_tags = $tag_ids ? Arr::only($tags, $tag_ids) : [];
 
             return array_values($this_tags);
         } else {

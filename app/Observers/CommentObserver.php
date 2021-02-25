@@ -1,7 +1,7 @@
 <?php
 namespace App\Observers;
 
-use App\Comment;
+use App\Models\Comment;
 use App\Lib\ParserLib;
 
 class CommentObserver

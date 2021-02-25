@@ -9,7 +9,7 @@
         @endphp
 
         @foreach ($tags as $tag)
-            <span class="label label-{{ array_random($color) }} tag_names">
+            <span class="label label-{{ Illuminate\Support\Arr::random($color) }} tag_names">
                 <span class="tag_name">
                     {{ $tag->tag_name }}
                 </span>

@@ -2,9 +2,9 @@
 
 namespace App\Admin\Controllers;
 
-use App\Article;
+use App\Models\Article;
 use App\Http\Controllers\Controller;
-use App\Tag;
+use App\Models\Tag;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;

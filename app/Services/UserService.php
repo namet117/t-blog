@@ -8,8 +8,8 @@
 
 namespace App\Services;
 
-use App\OauthUser;
-use App\User;
+use App\Models\OauthUser;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 

@@ -7,8 +7,8 @@
 namespace App\Services;
 
 
-use App\Article;
-use App\Tag;
+use App\Models\Article;
+use App\Models\Tag;
 
 class TagService extends BaseService
 {

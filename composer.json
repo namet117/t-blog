@@ -1,24 +1,22 @@
 {
-    "name": "laravel/laravel",
+    "name": "namet117/t-blog",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "nameT`s blog",
     "keywords": [
-        "framework",
-        "laravel"
+        "namet117",
+        "laravel",
+        "t-blog"
     ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "encore/laravel-admin": "1.*",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.12",
-        "laravel/tinker": "^2.5",
         "intervention/image": "^2.4",
-        "aliyuncs/oss-sdk-php": "^2.3",
-        "encore/laravel-admin": "1.5.*",
-        "laravel-admin-ext/log-viewer": "^1.0",
-        "namet/socialite": "~0.1"
+        "laravel/framework": "^8.12",
+        "laravel/tinker": "^2.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
