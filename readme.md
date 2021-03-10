@@ -1,3 +1,3 @@
 ## My Blog
 
-🐶[namet.xyz](https://namet.xyz)
+[namet.xyz](https://namet.xyz)

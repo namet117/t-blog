@@ -36,19 +36,19 @@
                     <li><label>Github</label><a href="https://github.com/namet117" target="_blank">github.com/namet117</a></li>
                 </ul>
             </div>
-            <div class="progress-list">
-                <h2><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> 技能点</h2>
-                <hr/>
-                <ul>
-                    <li><label>HTML/CSS</label><progress value="40" max="100"></progress></li>
-                    <li><label>JavaScript</label><progress value="40" max="100"></progress></li>
-                    <li><label>PHP</label><progress value="50" max="100"></progress></li>
-                    <li><label>Redis</label><progress value="50" max="100"></progress></li>
-                    <li><label>MySQL</label><progress value="40" max="100"></progress></li>
-                    <li><label>Linux</label><progress value="30" max="100"></progress></li>
-                    <li><label>Docker</label><progress value="30" max="100"></progress></li>
-                </ul>
-            </div>
+            {{--<div class="progress-list">--}}
+            {{--    <h2><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i> 技能点</h2>--}}
+            {{--    <hr/>--}}
+            {{--    <ul>--}}
+            {{--        <li><label>HTML/CSS</label><progress value="40" max="100"></progress></li>--}}
+            {{--        <li><label>JavaScript</label><progress value="40" max="100"></progress></li>--}}
+            {{--        <li><label>PHP</label><progress value="50" max="100"></progress></li>--}}
+            {{--        <li><label>Redis</label><progress value="50" max="100"></progress></li>--}}
+            {{--        <li><label>MySQL</label><progress value="40" max="100"></progress></li>--}}
+            {{--        <li><label>Linux</label><progress value="30" max="100"></progress></li>--}}
+            {{--        <li><label>Docker</label><progress value="30" max="100"></progress></li>--}}
+            {{--    </ul>--}}
+            {{--</div>--}}
         </div>
         <div class="col-md-offset-1 col-md-7 col-sm-12 side right">
             <div class="education">
@@ -96,13 +96,13 @@
                             <time>2017.12-2018.1</time>
                         </h3>
                         <ul class="info-content">
-                            <li>技术栈：Laravel+Redis+Bootstrap</li>
+                            <li>技术栈：Laravel+Bootstrap</li>
                             <li>
                                 <i class="glyphicon glyphicon-send" aria-hidden="true"></i>
-                                实现可将个人工作心得分享的平台
+                                分享解决问题的方法
                                 <br>
                                 <i class="glyphicon glyphicon-user" aria-hidden="true"></i>
-                                个人
+                                吐槽
                                 <br>
                             </li>
                         </ul>
